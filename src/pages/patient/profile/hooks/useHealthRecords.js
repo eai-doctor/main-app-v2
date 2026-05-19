@@ -24,7 +24,6 @@ export const useHealthRecords = (t, fhirPatientId, userId, setError, setLoading,
       const cacheKey = `${fhirPatientId}-FHIR_ALL`;
       let byTab;
 
-
       if (cacheRef.current[cacheKey]) {
         byTab = cacheRef.current[cacheKey];
       } else {

@@ -15,6 +15,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ChatSummaryModal from './components/modals/ChatSummaryModal';
 import { useHealthConsultation } from './hooks/useHealthConsultation';
 import ChatPanel from './components/ChatPanel';
+import ProductRecommendationPanel from './components/ProductRecommendationPanel';
 
 import { 
   SYMPTOM_SEVERITY_CLASSES, 
@@ -303,63 +304,79 @@ export default function HealthConsultation() {
       </div>
 
       {/* ── Main layout ── */}
+      {/* <div className="flex flex-col lg:flex-row gap-5 p-3 lg:p-6 max-w-screen-2xl mx-auto"> */}
+      {/* ── Main layout ── */}
       <div className="flex flex-col lg:flex-row gap-5 p-3 lg:p-6 max-w-screen-2xl mx-auto">
 
-        {/* ── Chat panel ── */}
-        <ChatPanel 
-          messages = {messages}
-          messagesContainerRef={messagesContainerRef}
-          messagesEndRef={messagesEndRef }
-          generateChatSummary = {generateChatSummary}
-          handleClearChat = {handleClearChat}
-          isGeneratingChatSummary = {isGeneratingChatSummary}
-          activeTab = {activeTab}
-          t = {t}
-          isLoadingChat = {isLoadingChat}
-          suggestions = {suggestions}
-          showSuggestions = {showSuggestions}
-          handleSuggestionClick = {handleSuggestionClick}
-          input = {input}
-          setInput= {setInput}
-          sendMessage= {sendMessage}
-          plusMenuRef= {plusMenuRef} 
-          showPlusMenu= {showPlusMenu}
-          setShowPlusMenu= {setShowPlusMenu}
-          isUploadingReport= {isUploadingReport} 
-          isAuthenticated= {isAuthenticated}
-          isPatient = {isPatient}
-          labReportInputRef= {labReportInputRef}
-          openLogin= {openLogin}
-          loading= {loading}
-          uploadLabReport={uploadLabReport}
-          FREE_MESSAGE_LIMIT ={FREE_MESSAGE_LIMIT }
-          getStoredMessageCount ={getStoredMessageCount}
-        />
+        {/* ── LEFT: Chat panel (takes remaining space) ── */}
+        <div className="flex-1 min-w-0">
+          <ChatPanel 
+            messages={messages}
+            messagesContainerRef={messagesContainerRef}
+            messagesEndRef={messagesEndRef}
+            generateChatSummary={generateChatSummary}
+            handleClearChat={handleClearChat}
+            isGeneratingChatSummary={isGeneratingChatSummary}
+            activeTab={activeTab}
+            t={t}
+            isLoadingChat={isLoadingChat}
+            suggestions={suggestions}
+            showSuggestions={showSuggestions}
+            handleSuggestionClick={handleSuggestionClick}
+            input={input}
+            setInput={setInput}
+            sendMessage={sendMessage}
+            plusMenuRef={plusMenuRef}
+            showPlusMenu={showPlusMenu}
+            setShowPlusMenu={setShowPlusMenu}
+            isUploadingReport={isUploadingReport}
+            isAuthenticated={isAuthenticated}
+            isPatient={isPatient}
+            labReportInputRef={labReportInputRef}
+            openLogin={openLogin}
+            loading={loading}
+            uploadLabReport={uploadLabReport}
+            FREE_MESSAGE_LIMIT={FREE_MESSAGE_LIMIT}
+            getStoredMessageCount={getStoredMessageCount}
+          />
+        </div>
 
-        {/* ── RIGHT: Record + History ── */}
-        <RecordingPanel 
-          activeTab={activeTab}
-          consulting={consulting}
-          setConsulting={setConsulting}
-          transcriptHistory={transcriptHistory}
-          interimTranscript={interimTranscript}
-          conversationSummary={conversationSummary}
-          setConversationSummary={setConversationSummary}
-          handleOpenEndConsultationModal={handleOpenEndConsultationModal}
-          isAuthenticated={isAuthenticated}
-          isPatient={isPatient}
-          setSnapshot ={setSnapshot }
-          setPendingAction={setPendingAction}
-          SYMPTOM_SEVERITY_CLASSES={SYMPTOM_SEVERITY_CLASSES}
-          t={t}
-          loading={loading}
-          user={user}
-          previousSymptoms={previousSymptoms}
-          isSymptomsLoading={isSymptomsLoading}
-        />
+        {/* ── RIGHT: Fixed-width column — Record + Product Recommendations ── */}
+        <div className="w-full lg:w-[340px] xl:w-[380px] flex-shrink-0 flex flex-col gap-5">
 
+          <RecordingPanel
+            activeTab={activeTab}
+            consulting={consulting}
+            setConsulting={setConsulting}
+            transcriptHistory={transcriptHistory}
+            interimTranscript={interimTranscript}
+            conversationSummary={conversationSummary}
+            setConversationSummary={setConversationSummary}
+            handleOpenEndConsultationModal={handleOpenEndConsultationModal}
+            isAuthenticated={isAuthenticated}
+            isPatient={isPatient}
+            setSnapshot={setSnapshot}
+            setPendingAction={setPendingAction}
+            SYMPTOM_SEVERITY_CLASSES={SYMPTOM_SEVERITY_CLASSES}
+            t={t}
+            loading={loading}
+            user={user}
+            previousSymptoms={previousSymptoms}
+            isSymptomsLoading={isSymptomsLoading}
+          />
+
+          <div className='hidden'>
+            <ProductRecommendationPanel
+              messages={messages}
+              t={t}
+              activeTab={activeTab}
+            />
+          </div>
+
+        </div>
 
       </div>
+
 
       {/* ── ChatboxModal ── */}
       <ChatboxModal 

@@ -8,7 +8,7 @@ import { UserIcon, StethoscopeIcon, BooksIcon, SettingsIcon } from "@/components
 import config from "@/config";
 
 /* -------------------- Main Page -------------------- */
-export default function HomePage() {
+export default function Home() {
   const navigate = useNavigate();
   const { t } = useTranslation(['clinic', 'common']);
   const { isAuthenticated, loading, accessToken  } = useAuth();

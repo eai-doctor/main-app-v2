@@ -62,10 +62,7 @@ export default function MainLeftPanel({
   const procedures = patientData.procedures;
   const requestedLabs = patientData.requested_labs || [];
   const imaging = patientData.imaging;
-
-  console.log("allergeis", allergies);
-  console.log("procedures", procedures);
-
+  const encounters = patientData.encounters;
 
   return(
       <>
@@ -95,8 +92,14 @@ export default function MainLeftPanel({
 
         {/* 3.3 Encounters (recent + more) - Accordion */}
         <Encounters 
-          consultations ={consultations}
-          admissions ={admissions}
+          // consultations ={consultations}
+          // admissions ={admissions}
+          encounters = {encounters}
+        />
+
+        {/* 3.4 Vital Signs (most recent first, show 3 by default) */}
+        <VitalSigns
+          vital_signs={vital_signs}
         />
 
         {/* 3.3 Encounters (recent + more) - Accordion */}
@@ -104,10 +107,7 @@ export default function MainLeftPanel({
           allergies ={allergies}
         />
 
-        {/* 3.4 Vital Signs (most recent first, show 3 by default) */}
-        <VitalSigns
-          vital_signs={vital_signs}
-        />
+        
 
         {/* 3.5 Immunizations – all immunizations sorted by date */}
         <Immunizations 

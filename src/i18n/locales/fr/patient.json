@@ -52,7 +52,8 @@
       "diagnosticReports": "Rapports diagnostiques",
       "carePlans": "Plans de soins",
       "flags": "Alertes",
-      "familyHistory": "Antécédents familiaux"
+      "familyHistory": "Antécédents familiaux",
+      "observations": "Observations"
     },
     "vitals": {
       "bloodPressure": "Pression artérielle",

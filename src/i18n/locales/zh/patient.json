@@ -52,7 +52,8 @@
       "diagnosticReports": "诊断报告",
       "carePlans": "护理计划",
       "flags": "警示",
-      "familyHistory": "家族病史"
+      "familyHistory": "家族病史",
+      "observations": "观察记录"
     },
     "vitals": {
       "bloodPressure": "血压",

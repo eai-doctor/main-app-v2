@@ -17,6 +17,12 @@ const navItems = [
     items: [{ id: "dashboard", label: "Dashboard", icon: "M1 1h6v6H1zM9 1h6v6H9zM1 9h6v6H1zM9 9h6v6H9z" }],
   },
   {
+    section: "Join",
+    items: [
+      { id: "requests", label: "Demo Requests", icon: "M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM8 3a5 5 0 110 10A5 5 0 018 3zm.75 2.25h-1.5v3.35l2.85 1.7.75-1.25-2.1-1.25V5.25z", badge: 24 },
+    ],
+  },,
+  {
     section: "Users",
     items: [
       { id: "doctors", label: "Doctor Management", icon: "M8 8a3 3 0 100-6 3 3 0 000 6zM2 14c0-3.314 2.686-5 6-5s6 1.686 6 5", badge: 24 },

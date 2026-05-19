@@ -92,11 +92,11 @@ useEffect(() => {
       const res = await medicalRecordApi.getFHIRRecordsByMrn(userFhirMrn);
       const records = res?.data?.records || {};
 
-      // byTab = {};
-      // TAB_KEYS.forEach((tab) => {
-      //   const list = Array.isArray(records[tab]) ? records[tab] : [];
-      //   byTab[tab] = list;
-      // });
+      byTab = {};
+      TAB_KEYS.forEach((tab) => {
+        const list = Array.isArray(records[tab]) ? records[tab] : [];
+        byTab[tab] = list;
+      });
 
       cacheRef.current[cacheKey] = records;
       byTab = records;
@@ -124,7 +124,7 @@ useEffect(() => {
 
       if (mrn) {
         const fhirRecords = await fetchFHIRRecords(mrn);
-        console.log("[original] fhirRecords : ", fhirRecords);
+        console.log("[original] fhirRecords : ", fhirRecords['Encounter']);
 
         if (fhirRecords) {
           const testPatientData = fhirRecordsToPatientData(fhirRecords);
@@ -166,7 +166,7 @@ useEffect(() => {
       await consultationApi.saveConsultationToRecord(mrn, newFindings);
       setNewFindings(null);
       // Refresh patient data in the left panel so new entries are visible immediately
-      const res = await getPatientDetails(mrn);
+      const res = await getPatientDetails(mrn, currentLanguage.code);
       if (res.data?.patient_data) {
         const freshData = res.data.patient_data;
         setPatientData(freshData);
@@ -213,10 +213,10 @@ useEffect(() => {
   navigate("/patients", { state: { searchTerm } });
 };
 
-  const fetchSoapNote = async (payload) => {
+  const fetchSoapNote = async (payload, lang) => {
     try {
       setIsLoadingSoap(true);
-      const response = await consultationApi.getSoap(payload);
+      const response = await consultationApi.getSoap(payload, lang);
       setSoapNote({
         subjective: response.data?.subjective || "",
         objective: response.data?.objective || "",
@@ -244,7 +244,8 @@ useEffect(() => {
 
       // Only fetch if this is a new patient
       if (currentPatientId && currentPatientId !== previousPatientIdRef.current) {
-        fetchSoapNote(patientData);
+        //051826
+        //fetchSoapNote(patientData, currentLanguage.code);
         previousPatientIdRef.current = currentPatientId;
       }
     }

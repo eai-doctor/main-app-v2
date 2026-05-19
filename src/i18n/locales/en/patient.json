@@ -52,7 +52,8 @@
       "diagnosticReports": "Diagnostic Reports",
       "carePlans": "Care Plans",
       "flags": "Flags",
-      "familyHistory": "Family History"
+      "familyHistory": "Family History",
+      "observations" : "Observations"
     },
     "vitals": {
       "bloodPressure": "Blood Pressure",

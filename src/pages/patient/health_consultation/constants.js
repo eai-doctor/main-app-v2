@@ -14,6 +14,7 @@ export const getTabs = (t) => [
   { id: 'chat',    label: t('tab.chat', 'Chat') },
   { id: 'record',  label: t('tab.record', 'Recording') },
   { id: 'history', label: t('tab.history', 'History') },
+  { id: 'products', label: t('tabs.products', 'Products') }
 ];
 
 export const getSuggestions = (t) => [

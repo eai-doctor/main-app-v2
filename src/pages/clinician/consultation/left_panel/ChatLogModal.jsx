@@ -1,15 +1,5 @@
 import { useState } from 'react';
-
-// Simple markdown-ish renderer for bold (**text**)
-function renderContent(text) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={i}>{part.slice(2, -2)}</strong>;
-    }
-    return part;
-  });
-}
+import ReactMarkdown from 'react-markdown';
 
 export default function ChatLogModal({ condition, chatLogs, onClose }) {
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -77,7 +67,7 @@ export default function ChatLogModal({ condition, chatLogs, onClose }) {
                         : 'bg-slate-100 text-slate-800 rounded-bl-sm'
                     }`}
                   >
-                    {renderContent(msg.content)}
+                    <ReactMarkdown>{msg.content}</ReactMarkdown>
                   </div>
                 </div>
               ))}
@@ -90,7 +80,7 @@ export default function ChatLogModal({ condition, chatLogs, onClose }) {
                   Consultation Summary
                 </div>
                 <div className="text-[12px] text-slate-700 leading-relaxed whitespace-pre-line">
-                  {selected.summary}
+                  <ReactMarkdown>{selected.summary}</ReactMarkdown>
                 </div>
               </div>
             )}

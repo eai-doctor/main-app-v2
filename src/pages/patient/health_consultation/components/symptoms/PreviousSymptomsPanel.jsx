@@ -9,7 +9,8 @@ function PreviousSymptomsPanel({ previousSymptoms, isSymptomsLoading, SYMPTOM_SE
 
   return (
     <>
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden" style={{ height: 'calc(100dvh - 160px)' }}>
+      {/* <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden" style={{ height: 'calc(100dvh - 160px)' }}> */}
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden w-full lg:w-80 xl:w-96 flex-shrink-0 "  >
         <div className="flex items-center gap-3 px-4 py-3 border-b border-slate-100 bg-[#f5f7ff]">
           <div className="w-[34px] h-[34px] rounded-[9px] bg-[#e6ecff] flex items-center justify-center shrink-0">
             <ClipboardIcon className="w-[16px] h-[16px] text-[#2C3B8D]" />

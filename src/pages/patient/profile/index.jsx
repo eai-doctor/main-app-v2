@@ -29,7 +29,7 @@ export default function MedicalProfile() {
   const tabLabels = useMemo(() => ({
     Condition: t('patient:medicalProfile.tabs.conditions'),
     Encounter: t('patient:medicalProfile.tabs.encounters'),
-    Observation: t('patient:medicalProfile.tabs.vitalSigns'),
+    Observation: t('patient:medicalProfile.tabs.observations'),
     AllergyIntolerance: t('patient:medicalProfile.tabs.allergies'),
     MedicationStatement: t('patient:medicalProfile.tabs.medicationStatements', 'Medication Statements'),
     MedicationRequest: t('patient:medicalProfile.tabs.medications'),

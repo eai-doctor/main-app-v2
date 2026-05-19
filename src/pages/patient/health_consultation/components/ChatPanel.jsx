@@ -34,7 +34,7 @@ function ChatPanel({
 }) {
     return (
         <div
-            className={`w-full lg:w-2/3 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col
+            className={`w-full  bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col
             ${activeTab !== 'chat' ? 'hidden lg:flex' : 'flex'}`}
             style={{ height: 'calc(100dvh - 160px)' }}
         >
