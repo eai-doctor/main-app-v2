@@ -32,7 +32,7 @@ import ClinicianBanner from './components/ClinicianBanner';
 import { usePreviousSymptoms } from './hooks/usePreviousSymptoms';
 
 export default function HealthConsultation() {
-  const { t } = useTranslation(['patient', 'common', 'functions', 'clinic']);
+  const { t } = useTranslation(['patient', 'common', 'functions', 'clinic', 'chat']);
   const navigate = useNavigate();
   const { isAuthenticated, isPatient, user, loading, accessToken } = useAuth();
   const { openLogin } = useAuthModal();
@@ -302,6 +302,7 @@ export default function HealthConsultation() {
           ))}
         </div>
       </div>
+      
 
       {/* ── Main layout ── */}
       {/* <div className="flex flex-col lg:flex-row gap-5 p-3 lg:p-6 max-w-screen-2xl mx-auto"> */}

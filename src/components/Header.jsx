@@ -28,7 +28,7 @@ function Header() {
     ? "/"
     : user?.role === "clinician"
     ? "/clinics"
-    : "/clinic-login"; 
+    : "/clinic-join";  
   const portalSwitchLabel = isClinicRoute ? t("common:buttons.patientPortal","Patient Portal") : t("common:buttons.clinicPortal","Clinic Portal");
   const PortalIcon = isClinicRoute ? User : Stethoscope;
 

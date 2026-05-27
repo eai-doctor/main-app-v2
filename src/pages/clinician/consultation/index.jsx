@@ -244,8 +244,7 @@ useEffect(() => {
 
       // Only fetch if this is a new patient
       if (currentPatientId && currentPatientId !== previousPatientIdRef.current) {
-        //051826
-        //fetchSoapNote(patientData, currentLanguage.code);
+        fetchSoapNote(patientData, currentLanguage.code);
         previousPatientIdRef.current = currentPatientId;
       }
     }

@@ -9,6 +9,7 @@ import Header from "./Header";
 import NavBar from "./NavBar";
 import SystemStatus from "./SystemStatus";
 import ExternalApiNotice from './ExternalApiNotice';
+import DataTable from "./DataTable";
 
 export {
     // Header,
@@ -21,5 +22,6 @@ export {
     Header,
     NavBar,
     SystemStatus,
-    ExternalApiNotice
+    ExternalApiNotice,
+    DataTable
 };

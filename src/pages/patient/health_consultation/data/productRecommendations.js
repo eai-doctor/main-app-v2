@@ -105,3 +105,69 @@ export function getRecommendedProducts(messages) {
     .filter(r => r.score >= 50)
     .sort((a, b) => b.score - a.score);
 }
+
+const tempProducts = [
+    {
+        "product_id": 1,
+        "name": "EboScience Anti-Aging Nano-particle SynExo Serum 30ml",
+        "category": "serum",
+        "description": "Visible Wrinkle Smoothing, Barrier Support & Resilience, Intensive Surface Hydration",
+        "benefits": ["hydration", "anti-aging", "soothing"],
+    },
+    {
+        "product_id": 2,
+        "name": "Acne-Control Serum",
+        "category": "serum",
+        "description": "Lightweight serum for acne-prone skin with salicylic acid",
+        "price": 28,
+        "rating": 4.3,
+        "benefits": ["acne-fighting", "oil-control", "pore-cleansing"],
+        "genetic_fit": ["oily_prone_gene", "acne_prone_gene"],
+        "contraindications": ["sensitive_skin_gene"]
+    },
+    {
+        "product_id": 3,
+        "name": "Gentle Cleanser",
+        "category": "cleanser",
+        "description": "Mild cleanser suitable for sensitive skin, fragrance-free",
+        "price": 18,
+        "rating": 4.7,
+        "benefits": ["gentle-cleansing", "soothing", "safe-for-sensitive"],
+        "genetic_fit": ["sensitive_skin_gene", "dry_skin_gene", "oily_prone_gene"],
+        "contraindications": []
+    },
+    {
+        "product_id": 4,
+        "name": "Vitamin C Brightening Serum",
+        "category": "serum",
+        "description": "Brightening serum to reduce dullness and uneven tone",
+        "price": 45,
+        "rating": 4.6,
+        "benefits": ["brightening", "anti-dullness", "radiance"],
+        "genetic_fit": ["all"], 
+        "contraindications": []
+    },
+    {
+        "product_id": 5,
+        "name": "Oil-Control Face Mask",
+        "category": "mask",
+        "description": "Clay mask to control excess oil and unclog pores",
+        "price": 22,
+        "rating": 4.2,
+        "benefits": ["oil-control", "pore-cleansing", "detoxifying"],
+        "genetic_fit": ["oily_prone_gene"],
+        "contraindications": ["dry_skin_gene", "sensitive_skin_gene"]
+    },
+    {
+        "product_id": 6,
+        "name": "Anti-Aging Eye Cream",
+        "category": "eye-cream",
+        "description": "Nourishing eye cream to reduce wrinkles and fine lines",
+        "price": 55,
+        "rating": 4.8,
+        "benefits": ["anti-aging", "hydration", "brightening"],
+        "genetic_fit": ["dry_skin_gene"],
+        "contraindications": []
+    },
+]
+

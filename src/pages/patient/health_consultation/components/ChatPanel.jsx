@@ -52,9 +52,10 @@ function ChatPanel({
                 <div className="flex items-center gap-1.5">
                     {/* {messages.some(m => m.role === 'user') && ( */}
                     { (
-                    <button onClick={generateChatSummary} disabled={isGeneratingChatSummary}
+                    <button class="cursor-pointer" onClick={generateChatSummary} disabled={isGeneratingChatSummary}
                         className="text-[11px] font-semibold text-[#2C3B8D] px-2.5 py-1.5 rounded-lg hover:bg-[#eef2ff] transition-colors disabled:opacity-50">
-                        {isGeneratingChatSummary ? t('common:states.generating') : t('chat.summarize', 'Summarize')}
+                        {/* {isGeneratingChatSummary ? t('common:states.generating') : t('chat:summarize', 'Summarize')} */}
+                        {isGeneratingChatSummary ? t('common:states.generating') : t('chat:saveThisConversation', 'Save this conversation')}
                     </button>
                     )}
                     {messages.length > 0 && (
