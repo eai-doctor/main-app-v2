@@ -69,14 +69,14 @@ function FunctionSelector() {
       icon: <AiIcon className="w-8 h-8 text-blue-500" />,
       route: "/functions/triage-engine",
     },
-    {
-      id: "merck-manual",
-      title: t('functions:cards.merckManual.title'),
-      description: t('functions:cards.merckManual.description'),
-      icon: <BooksIcon className="w-8 h-8 text-blue-500" />,
-      route: "/functions/merck-manual",
+    // {
+    //   id: "merck-manual",
+    //   title: t('functions:cards.merckManual.title'),
+    //   description: t('functions:cards.merckManual.description'),
+    //   icon: <BooksIcon className="w-8 h-8 text-blue-500" />,
+    //   route: "/functions/merck-manual",
 
-    },
+    // },
     {
       id: "pubmed",
       title: t('functions:cards.pubmed.title'),

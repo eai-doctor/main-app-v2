@@ -63,13 +63,13 @@ export default function Home() {
       }
 
       if (!loading) {
-        window.location.replace("/clinic-login"); 
+        window.location.replace("/clinic-join"); 
       }
     },
     [isAuthenticated, loading, navigate]
   );
 
-  const handleOnSignInBtnClick = () => window.location.replace("/clinic-login");
+  const handleOnSignInBtnClick = () => window.location.replace("/clinic-join?mode=login");
 
   return (
     <div className="min-h-96 bg-gradient-to-br from-gray-50 to-blue-50">

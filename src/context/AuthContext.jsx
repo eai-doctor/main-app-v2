@@ -126,10 +126,10 @@ const adminLogin = useCallback(async (email, password) => {
 
     setUser(null);
     setAccessToken(null);   
-    setStoredToken(null);   
-
+    setStoredToken(null);  
+    
     window.location.replace(
-      role === "clinician" ? "/clinic-login" : "/"
+      role === "clinician" ? "/clinic-join?mode=scrolling" : "/"
     );
   }, [user]);
 

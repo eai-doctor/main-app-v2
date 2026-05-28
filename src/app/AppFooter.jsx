@@ -15,7 +15,7 @@ export default function AppFooter() {
     ? "/"
     : user?.role === "clinician"
     ? "/clinics"
-    : "/clinic-login";
+    : "/clinic-join?mode=login";
 
   const portalTitle = isClinicRoute
     ? t('footer.portalTitle.patient')
