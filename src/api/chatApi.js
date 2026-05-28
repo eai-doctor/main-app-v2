@@ -66,7 +66,7 @@ export const saveConsultationSummaries = (chatSummary, cleanMessages, summaryMod
       })
   
 export const uploadLabReport = (formData, uploadHeaders) =>
-  api.post(`/lab-report/upload`,formData,{ headers: uploadHeaders })
+  api.post(`/api/lab-report/upload`,formData,{ headers: uploadHeaders })
 
 
 const chatApi = {
