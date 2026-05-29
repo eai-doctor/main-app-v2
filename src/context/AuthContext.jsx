@@ -127,10 +127,12 @@ const adminLogin = useCallback(async (email, password) => {
     setUser(null);
     setAccessToken(null);   
     setStoredToken(null);  
+
+    console.log("storedToken:", storedToken);
     
-    window.location.replace(
-      role === "clinician" ? "/clinic-join?mode=scrolling" : "/"
-    );
+    // window.location.replace(
+    //   role === "clinician" ? "/clinic-join?mode=scrolling" : "/"
+    // );
   }, [user]);
 
  const register = useCallback(async (email, password, name, role) => {  // t 제거
