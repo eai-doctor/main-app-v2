@@ -55,7 +55,7 @@ export function AuthProvider({ children }) {
       }
     };
 
-    initializeAuth();
+    //initializeAuth();
     return () => { isMounted = false; };
   }, []);
 
