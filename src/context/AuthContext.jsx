@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import axios from "axios";
 import config from "@/config";
 import { authLogin, authMe, authLogout, authRefresh, authRegister,authVerifyEmail, authResendVerification, authForgotPassword, authAdminLogin } from "@/api/authApi";
-import { setStoredToken, getStoredToken } from "@/api/axiosBase";
+import { setStoredToken, getStoredToken, clearStoredToken } from "@/api/axiosBase";
 
 const AuthContext = createContext(null);
 
@@ -19,6 +19,10 @@ export function AuthProvider({ children }) {
 
   const isAuthenticated = !!user;
   const isPatient = isAuthenticated && user.role == "patient";
+
+  console.log("AuthProvider mounted");
+  console.log("storedToken:", getStoredToken());
+  console.log("accessToken:", accessToken);
 
   useEffect(() => {
     let isMounted = true;
@@ -127,13 +131,12 @@ const adminLogin = useCallback(async (email, password) => {
     setUser(null);
     setAccessToken(null);   
     setStoredToken(null);  
+    clearStoredToken();
 
-    console.log("storedToken:", getStoredToken());
-    console.log("accessToken:", accessToken);
     
-    // window.location.replace(
-    //   role === "clinician" ? "/clinic-join?mode=scrolling" : "/"
-    // );
+    window.location.replace(
+      role === "clinician" ? "/clinic-join?mode=scrolling" : "/"
+    );
   }, [user]);
 
  const register = useCallback(async (email, password, name, role) => {  // t 제거
