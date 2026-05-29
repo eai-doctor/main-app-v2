@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { useAuth } from "@/context/AuthContext";
 import { FeatureCard, Header, SystemStatus } from "@/components";
-import { ChatIcon, DnaIcon, AlertIcon, ClipboardListIcon, UserIcon } from "@/components/ui/icons";
+import { ChatIcon, DnaIcon, AlertIcon, ClipboardListIcon, UserIcon, DocumentIcon } from "@/components/ui/icons";
 import { AuthModalProvider, useAuthModal } from "@/context/AuthModalContext";
 import config from "@/config";
 
@@ -78,6 +78,15 @@ function PersonalHome() {
       requiresAuth: !isPatient && true,
       disabled:false,
       onRequireAuth:() => openLogin({ route : "/triage-engine" })
+    },
+    {
+      id: "medical-report-analysis",
+      title: "Medical Report Analysis",
+      description: "Upload and analyze your medical reports with AI assistance",
+      icon: <DocumentIcon className="w-8 h-8 text-blue-500" />,
+      route: "/medical-report-analysis",
+      requiresAuth: false,
+      disabled: false,
     },
   ];
 
