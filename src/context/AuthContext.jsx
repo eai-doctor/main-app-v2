@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import axios from "axios";
 import config from "@/config";
 import { authLogin, authMe, authLogout, authRefresh, authRegister,authVerifyEmail, authResendVerification, authForgotPassword, authAdminLogin } from "@/api/authApi";
-import { setStoredToken } from "@/api/axiosBase";
+import { setStoredToken, getStoredToken } from "@/api/axiosBase";
 
 const AuthContext = createContext(null);
 
@@ -128,7 +128,8 @@ const adminLogin = useCallback(async (email, password) => {
     setAccessToken(null);   
     setStoredToken(null);  
 
-    console.log("storedToken:", storedToken);
+    console.log("storedToken:", getStoredToken());
+    console.log("accessToken:", accessToken());
     
     // window.location.replace(
     //   role === "clinician" ? "/clinic-join?mode=scrolling" : "/"

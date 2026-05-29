@@ -6,6 +6,10 @@ export const setStoredToken = (token) => {
   accessToken = token;
 };
 
+export const getStoredToken = () => {
+  return accessToken;
+}
+
 const createApi = (baseURL) => {
   const instance = axios.create({
     baseURL: baseURL,
