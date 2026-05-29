@@ -28,6 +28,8 @@ export default function AdminLoginFields() {
         return;
       }
 
+      console.log("adminLogin successful:", res);
+
       window.location.replace("/admin/dashboard");
     } catch (err) {
       setError("Network error. Please try again.");
