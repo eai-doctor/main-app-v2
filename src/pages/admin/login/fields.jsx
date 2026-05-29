@@ -30,7 +30,7 @@ export default function AdminLoginFields() {
 
       console.log("adminLogin successful:", res);
 
-      // window.location.replace("/admin/dashboard");
+      window.location.replace("/admin/dashboard");
     } catch (err) {
       setError("Network error. Please try again.");
     } finally {

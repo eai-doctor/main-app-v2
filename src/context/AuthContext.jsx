@@ -203,7 +203,8 @@ const adminLogin = useCallback(async (email, password) => {
       (err) => {
         // Session expired or invalid — log out
         if (err.response?.status === 401 && user) {
-          logout();
+          console.warn("Access token expired or invalid. Logging out.", err);
+          // logout();
         }
         return Promise.reject(err);
       }

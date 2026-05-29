@@ -59,7 +59,7 @@ export default function AdminDashboard() {
 
   const handleLogoutClicked = () => {
     logout();
-    window.location.reload="/";
+    window.location.replace("/");
   }
 
   return (
