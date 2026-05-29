@@ -129,7 +129,7 @@ const adminLogin = useCallback(async (email, password) => {
     setStoredToken(null);  
 
     console.log("storedToken:", getStoredToken());
-    console.log("accessToken:", accessToken());
+    console.log("accessToken:", accessToken);
     
     // window.location.replace(
     //   role === "clinician" ? "/clinic-join?mode=scrolling" : "/"
@@ -151,7 +151,6 @@ const adminLogin = useCallback(async (email, password) => {
     return userData;
 
   } catch (err) {
-    // 에러 정규화만 담당, 번역 없음
     const code = err.response?.data?.code;
     const enrichedError = new Error(err.response?.data?.error ?? "unknown");
     enrichedError.code = code;
