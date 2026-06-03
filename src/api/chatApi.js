@@ -68,6 +68,18 @@ export const saveConsultationSummaries = (chatSummary, cleanMessages, summaryMod
 export const uploadLabReport = (formData, uploadHeaders) =>
   api.post(`/api/lab-report/upload`,formData,{ headers: uploadHeaders })
 
+export const uploadMedicalReport = (formData) =>
+  api.post(`/api/medical-report/upload`, formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  });
+
+export const chatMedicalReport = (message, reportId, chatHistory) =>
+  api.post(`/api/medical-report/chat`, {
+    message,
+    report_id: reportId,
+    chat_history: chatHistory,
+  });
+
 
 const chatApi = {
     getSuggestions,
@@ -79,7 +91,9 @@ const chatApi = {
     getConsultationSummaries,
     generateConsultationSummaries,
     saveConsultationSummaries,
-    uploadLabReport
+    uploadLabReport,
+    uploadMedicalReport,
+    chatMedicalReport,
 };
 
 export default chatApi;
