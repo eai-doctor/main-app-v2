@@ -1,15 +1,8 @@
 import { useState, useRef } from 'react';
+import { uploadMedicalReport, chatMedicalReport } from '@/api/chatApi';
 
 const ACCEPTED_TYPES = ['application/pdf', 'image/jpeg', 'image/png'];
 const MAX_SIZE_MB = 10;
-
-const MOCK_RESPONSES = [
-  (filename) => `Based on **${filename}**, I can see the uploaded document. Once the AI backend is connected, I'll analyze its contents in detail. What specific aspect would you like to focus on?`,
-  (filename) => `I've reviewed **${filename}**. Please ask me about specific values, trends, or concerns and I'll walk you through them once the analysis backend is live.`,
-  (filename) => `Thank you for uploading **${filename}**. I'm ready to help interpret the results. What would you like to know?`,
-  () => `That's a great question. Once the AI backend is connected, I'll provide a detailed analysis. For now, can you describe what you're seeing in the report?`,
-  () => `I understand your concern. When the full analysis feature is enabled, I'll cross-reference your report values against standard ranges. Is there a particular section you'd like to discuss?`,
-];
 
 function buildWelcomeMessage(filename) {
   return `**${filename}** has been loaded. Ask me anything about this report.`;
@@ -30,7 +23,7 @@ export function useMedicalReport() {
     setMessages([{ role: 'assistant', content: buildWelcomeMessage(filename) }]);
   };
 
-  const handleFileInputChange = (e) => {
+  const handleFileInputChange = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -45,25 +38,35 @@ export function useMedicalReport() {
       return;
     }
 
+    e.target.value = '';
     setIsUploadingReport(true);
 
-    const newReport = {
-      id: Date.now().toString(),
-      file,
-      filename: file.name,
-      fileType: file.type === 'application/pdf' ? 'pdf' : 'image',
-      uploadedAt: new Date(),
-      sizeKB: Math.round(file.size / 1024),
-    };
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
 
-    setTimeout(() => {
+      const res = await uploadMedicalReport(formData);
+      const { report_id } = res.data;
+
+      const newReport = {
+        id: Date.now().toString(),
+        reportId: report_id,
+        file,
+        filename: file.name,
+        fileType: file.type === 'application/pdf' ? 'pdf' : 'image',
+        uploadedAt: new Date(),
+        sizeKB: Math.round(file.size / 1024),
+      };
+
       setReports((prev) => [...prev, newReport]);
       setSelectedReportId(newReport.id);
       seedChat(newReport.filename);
+    } catch (err) {
+      const msg = err?.response?.data?.error || 'Failed to upload report. Please try again.';
+      alert(msg);
+    } finally {
       setIsUploadingReport(false);
-    }, 400);
-
-    e.target.value = '';
+    }
   };
 
   const handleSelectReport = (id) => {
@@ -75,22 +78,33 @@ export function useMedicalReport() {
     setInput('');
   };
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     if (!input.trim() || !selectedReport || isLoadingChat) return;
 
     const userMessage = { role: 'user', content: input.trim() };
-    setMessages((prev) => [...prev, userMessage]);
+    const currentHistory = [...messages, userMessage];
+    setMessages(currentHistory);
     setInput('');
     setIsLoadingChat(true);
 
-    const delay = 800 + Math.random() * 600;
-    const pick = MOCK_RESPONSES[Math.floor(Math.random() * MOCK_RESPONSES.length)];
-    const reply = pick(selectedReport.filename);
+    try {
+      const apiHistory = currentHistory.slice(0, -1).map((m) => ({
+        role: m.role,
+        content: m.content,
+      }));
 
-    setTimeout(() => {
+      const res = await chatMedicalReport(userMessage.content, selectedReport.reportId, apiHistory);
+      const reply = res.data?.response || 'No response received.';
       setMessages((prev) => [...prev, { role: 'assistant', content: reply }]);
+    } catch (err) {
+      const errMsg = err?.response?.data?.error || 'Something went wrong. Please try again.';
+      setMessages((prev) => [
+        ...prev,
+        { role: 'assistant', content: errMsg, isError: true },
+      ]);
+    } finally {
       setIsLoadingChat(false);
-    }, delay);
+    }
   };
 
   const clearChat = () => {
