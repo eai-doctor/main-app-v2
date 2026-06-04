@@ -80,6 +80,12 @@ export const chatMedicalReport = (message, reportId, chatHistory) =>
     chat_history: chatHistory,
   });
 
+export const extractMedicalReportTests = (reportId) =>
+  api.post(`/api/medical-report/extract-tests`, { report_id: reportId });
+
+export const saveMedicalReportTests = (reportId, tests) =>
+  api.post(`/api/medical-report/save-tests`, { report_id: reportId, tests });
+
 
 const chatApi = {
     getSuggestions,
@@ -94,6 +100,8 @@ const chatApi = {
     uploadLabReport,
     uploadMedicalReport,
     chatMedicalReport,
+    extractMedicalReportTests,
+    saveMedicalReportTests,
 };
 
 export default chatApi;

@@ -36,6 +36,10 @@ export default function MedicalReportAnalysis() {
     isLoadingChat,
     sendMessage,
     clearChat,
+    testResults,
+    isLoadingTests,
+    updateTestResult,
+    saveStatus,
   } = useMedicalReport();
 
   useEffect(() => {
@@ -133,6 +137,10 @@ export default function MedicalReportAnalysis() {
           fileInputRef={fileInputRef}
           handleFileInputChange={handleFileInputChange}
           isUploadingReport={isUploadingReport}
+          testResults={testResults}
+          isLoadingTests={isLoadingTests}
+          onUpdateTestResult={updateTestResult}
+          saveStatus={saveStatus}
         />
       </div>
     </div>
