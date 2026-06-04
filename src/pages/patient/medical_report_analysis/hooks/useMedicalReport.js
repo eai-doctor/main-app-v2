@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { uploadMedicalReport, chatMedicalReport, extractMedicalReportTests, saveMedicalReportTests } from '@/api/chatApi';
+import { useAuth } from '@/context/AuthContext';
+import { uploadMedicalReport, chatMedicalReport, getMedicalReports, extractMedicalReportTests, saveMedicalReportTests } from '@/api/chatApi';
 
 const ACCEPTED_TYPES = ['application/pdf', 'image/jpeg', 'image/png'];
 const MAX_SIZE_MB = 10;
@@ -17,6 +18,8 @@ function tryRecomputeAbnormal(result, normal_range) {
 }
 
 export function useMedicalReport() {
+  const { isAuthenticated, loading } = useAuth();
+
   const [reports, setReports] = useState([]);
   const [selectedReportId, setSelectedReportId] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -31,6 +34,26 @@ export function useMedicalReport() {
   const fileInputRef = useRef(null);
   const autosaveTimerRef = useRef(null);
   const activeReportIdRef = useRef(null);
+
+  // Load previously uploaded reports from the backend on mount (once auth is ready)
+  useEffect(() => {
+    if (loading || !isAuthenticated) return;
+    getMedicalReports()
+      .then((res) => {
+        const rows = res.data?.reports ?? [];
+        setReports(
+          rows.map((r) => ({
+            id: r.report_id,
+            reportId: r.report_id,
+            filename: r.filename,
+            fileType: r.file_type,
+            uploadedAt: new Date(r.uploaded_at),
+            sizeKB: null,
+          }))
+        );
+      })
+      .catch(() => {/* fail silently — user just starts with an empty list */});
+  }, [loading, isAuthenticated]);
 
   const selectedReport = reports.find((r) => r.id === selectedReportId) ?? null;
 
@@ -117,7 +140,9 @@ export function useMedicalReport() {
         sizeKB: Math.round(file.size / 1024),
       };
 
-      setReports((prev) => [...prev, newReport]);
+      setReports((prev) =>
+        prev.some((r) => r.reportId === report_id) ? prev : [...prev, newReport]
+      );
       setSelectedReportId(newReport.id);
       seedChat(newReport.filename);
       loadTestResults(report_id);

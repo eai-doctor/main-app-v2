@@ -190,7 +190,7 @@ function ReportSidebar({
                 <div className="flex-1 min-w-0">
                   <p className="text-[13px] font-semibold text-slate-800 truncate">{report.filename}</p>
                   <p className="text-[10px] text-slate-400 mt-0.5">
-                    {report.uploadedAt.toLocaleDateString()} · {report.sizeKB} KB
+                    {report.uploadedAt.toLocaleDateString()}{report.sizeKB ? ` · ${report.sizeKB} KB` : ''}
                   </p>
                 </div>
                 {selectedReportId === report.id && (
