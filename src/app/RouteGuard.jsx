@@ -13,11 +13,10 @@ function RouteGuard({
   // 1. Loading
   if (loading) return <LoadingScreen />;
 
-  console.log("RouteGuard, isAuthenticated, user, loading", { isAuthenticated, user, loading });
 
   // 2. Auth check
   if (requireAuth && !isAuthenticated) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/clinic-join" replace />;
   }
 
   // 3. Role check

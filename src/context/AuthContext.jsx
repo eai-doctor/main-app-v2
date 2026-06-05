@@ -21,8 +21,8 @@ export function AuthProvider({ children }) {
   const isPatient = isAuthenticated && user.role == "patient";
 
   console.log("AuthProvider mounted");
-  console.log("storedToken:", getStoredToken());
-  console.log("accessToken:", accessToken);
+  // console.log("storedToken:", getStoredToken());
+  // console.log("accessToken:", accessToken);
 
   useEffect(() => {
     let isMounted = true;
