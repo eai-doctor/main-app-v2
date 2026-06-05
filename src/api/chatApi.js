@@ -72,7 +72,28 @@ export const getChatLogs = (consultationIds) =>
       })
   
 export const uploadLabReport = (formData, uploadHeaders) =>
-  api.post(`/lab-report/upload`,formData,{ headers: uploadHeaders })
+  api.post(`/api/lab-report/upload`,formData,{ headers: uploadHeaders })
+
+export const uploadMedicalReport = (formData) =>
+  api.post(`/api/medical-report/upload`, formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  });
+
+export const chatMedicalReport = (message, reportId, chatHistory) =>
+  api.post(`/api/medical-report/chat`, {
+    message,
+    report_id: reportId,
+    chat_history: chatHistory,
+  });
+
+export const getMedicalReports = () =>
+  api.get(`/api/medical-report/my-reports`);
+
+export const extractMedicalReportTests = (reportId) =>
+  api.post(`/api/medical-report/extract-tests`, { report_id: reportId });
+
+export const saveMedicalReportTests = (reportId, tests) =>
+  api.post(`/api/medical-report/save-tests`, { report_id: reportId, tests });
 
 
 const chatApi = {
@@ -86,6 +107,11 @@ const chatApi = {
     generateConsultationSummaries,
     saveConsultationSummaries,
     uploadLabReport,
+    uploadMedicalReport,
+    chatMedicalReport,
+    getMedicalReports,
+    extractMedicalReportTests,
+    saveMedicalReportTests,
     getChatLogs
 };
 
