@@ -16,7 +16,7 @@ export default function AppRouter() {
         {publicRoutes.map(r => (
           <Route key={r.path} path={r.path} element={r.element} />
         ))}
-
+{/* 
         {clinicianRoutes.map(r => (
           <Route
             key={r.path}
@@ -26,6 +26,15 @@ export default function AppRouter() {
                 {r.element}
               </RouteGuard>
             }
+          />
+        ))} */}
+
+        
+        {clinicianRoutes.map(r => (
+          <Route
+            key={r.path}
+            path={r.path}
+            element={r.element}
           />
         ))}
 
