@@ -2,39 +2,8 @@ import { useState, useRef } from 'react';
 import { ChevronDown, ChevronRight, Shield, Cookie, FileText, ExternalLink, ArrowRight, CheckCircle, Printer, ArrowLeft, Download, FileSearch } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import logoImage from "/images/logo.png";
+import PublicLayout from '@/components/PublicLayout';
 
-function Navbar({ onSignIn }) {
-  return (
-    <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100/80">
-      <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between gap-6">
-        <a href="/" className="flex items-center gap-2 shrink-0">
-          <img src={logoImage} alt="EAI Doctor" className="h-7 w-auto" />
-          <span className="hidden sm:block text-sm font-semibold text-gray-800 tracking-tight">EAI Doctor</span>
-        </a>
-        <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-gray-500">
-          {["For Clinicians","Features","Research","Company"].map(l => (
-            <a key={l} href="#" className="hover:text-gray-900 transition-colors">{l}</a>
-          ))}
-        </nav>
-        <div className="flex items-center gap-2 shrink-0">
-          <a href="/clinic-join"
-             className="hidden sm:inline-flex items-center px-4 py-2 rounded-full border border-gray-200 text-sm font-medium text-gray-600 hover:border-blue-300 hover:text-blue-600 transition-all">
-            Book a Demo
-          </a>
-          <button
-            onClick={onSignIn}
-            className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-white"
-            style={{ background: "linear-gradient(135deg,#2C3B8D,#277cc4)" }}
-          >
-            Sign In
-          </button>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-/* ── Sidebar TOC ─────────────────────────────────────────────────────────────── */
 function TableOfContents({ sections, activeId, onSelect }) {
   return (
     <nav className="space-y-1">
@@ -103,7 +72,6 @@ function Highlight({ children }) {
   );
 }
 
-/* ── Cookie Toggle ───────────────────────────────────────────────────────────── */
 function CookieToggle({ name, desc, required, defaultOn }) {
   const [on, setOn] = useState(defaultOn);
   return (
@@ -130,7 +98,6 @@ function CookieToggle({ name, desc, required, defaultOn }) {
   );
 }
 
-/* ── Tab Button ──────────────────────────────────────────────────────────────── */
 function TabBtn({ active, onClick, icon: Icon, label }) {
   return (
     <button
@@ -146,9 +113,6 @@ function TabBtn({ active, onClick, icon: Icon, label }) {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   TERMS SECTIONS & CONTENT
-───────────────────────────────────────────────────────────────────────────── */
 const TERMS_SECTIONS = [
   { id:"acceptance",    title:"1. Acceptance of Terms" },
   { id:"description",   title:"2. Service Description" },
@@ -618,7 +582,7 @@ export default function LegalPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafd]" style={{ fontFamily:"'DM Sans',sans-serif" }}>
+    <PublicLayout mode="scrolling">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display:ital@0;1&display=swap');
         @keyframes gradShift {
@@ -637,8 +601,6 @@ export default function LegalPage() {
           main { padding:0 !important; }
         }
       `}</style>
-
-      <Navbar onSignIn={() => {}} />
 
       {/* Hero */}
       <section className="relative hero-gradient overflow-hidden">
@@ -797,6 +759,6 @@ export default function LegalPage() {
           </div>
         </div>
       </footer>
-    </div>
+    </PublicLayout>
   );
 }

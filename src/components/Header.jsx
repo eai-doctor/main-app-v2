@@ -49,7 +49,6 @@ function Header() {
         {/* -------- Right -------- */}
         <div className="flex items-center gap-2 sm:gap-3">
 
-          {/* Portal Switch (데스크톱: 텍스트 포함) */}
           <a
             href={portalSwitchHref}
             className="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-[#2C3B8D]/40 text-[#2C3B8D] text-sm font-medium hover:bg-[#2C3B8D]/5 hover:border-[#2C3B8D] transition-colors"

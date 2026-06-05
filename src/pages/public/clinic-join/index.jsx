@@ -2,10 +2,7 @@ import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { X, ChevronRight, Zap, Brain, Shield, Activity, Globe, ArrowRight, Stethoscope, FlaskConical, ScanLine } from "lucide-react";
 
-import Header from "./component/header";
-import LoginModal from "./modal/login";
-
-import { headerMenus } from "./constant"
+import PublicLayout from "@/components/PublicLayout";
 
 function Stat({ value, label }) {
   return (
@@ -45,10 +42,9 @@ function TrendPill({ label }) {
 
 export default function ClinicJoin({ mode }) {
   const { t } = useTranslation(['landing', 'common', 'clinic', 'auth']);
-  const [modalOpen, setModalOpen] = useState(mode === "login"); // mode = login, scrolling
 
   return (
-    <div className="min-h-screen bg-[#f8fafd]" style={{ fontFamily: "'DM Sans',sans-serif" }}>
+    <PublicLayout mode={mode}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display:ital@0;1&display=swap');
 
@@ -129,11 +125,8 @@ export default function ClinicJoin({ mode }) {
           text-transform:uppercase;
         }
       `}</style>
-
-      <LoginModal open={modalOpen} onClose={() => setModalOpen(false)} />
-
       {/* Navbar */}
-      <Header headerMenus={headerMenus} setModalOpen={setModalOpen} />
+      {/* <Header headerMenus={headerMenus} setModalOpen={setModalOpen} /> */}
       {/* <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100/80">
         <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between gap-6">
           <a href="/" className="flex items-center gap-2 shrink-0">
@@ -367,6 +360,6 @@ export default function ClinicJoin({ mode }) {
         </div>
       </section>
 
-    </div>
+    </PublicLayout>
   );
 }
