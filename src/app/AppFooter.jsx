@@ -73,8 +73,8 @@ export default function AppFooter() {
                 <div key={col.title}>
                   <p className="text-white font-semibold text-xs uppercase tracking-widest mb-3">{col.title}</p>
                   <ul className="space-y-2">
-                    {col.links.map(l => (
-                      <li key={l}><a href={l.url} className="hover:text-white transition-colors text-xs">{l.value}</a></li>
+                    {col.links.map((l, index) => (
+                      <li key={index}><a href={l.url} className="hover:text-white transition-colors text-xs">{l.value}</a></li>
                     ))}
                   </ul>
                 </div>
