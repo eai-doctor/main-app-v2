@@ -93,7 +93,7 @@ function PersonalHome() {
       title: "Nutrition Consultation Aide",
       description: "Get personalized nutrition advice and meal planning assistance",
       icon: <NutritionConsultationIcon className="w-8 h-8 text-blue-500" />,
-      route: config.nutritionConsultationUrl,
+      externalUrl: config.nutritionConsultationUrl,
       requiresAuth: false,
       disabled: false,
     }
