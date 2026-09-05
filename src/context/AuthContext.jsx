@@ -20,7 +20,6 @@ export function AuthProvider({ children }) {
   const isAuthenticated = !!user;
   const isPatient = isAuthenticated && user.role == "patient";
 
-  console.log("AuthProvider mounted");
   // console.log("storedToken:", getStoredToken());
   // console.log("accessToken:", accessToken);
 
