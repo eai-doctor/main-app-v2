@@ -1,0 +1,17 @@
+import HomePage from "./Home";
+import PatientSelector from "./PatientSelector";
+import Consultation from "./consultation";
+// import InitialConsultationUI from "./InitialConsultationUI";
+import FunctionSelector from "./functions/FunctionSelector";
+// import PrescriptionList from "./PrescriptionList";
+// import EHRbasePatientList from "./EHRbasePatientList";
+
+export {
+    HomePage,
+    PatientSelector,
+    Consultation,
+    // InitialConsultationUI,
+    FunctionSelector
+    // PrescriptionList,
+    // EHRbasePatientList
+}
