@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { ArrowRight, Brain, Shield, Globe, Users, Award, Zap, Heart, ChevronRight } from 'lucide-react';
 import logoImage from "/images/logo.png";
 
-import { teamMembers } from 'legacy-src/constants/teams';
-import {PublicLayout} from "legacy-src/components";
+import { teamMembers } from 'src/constants/teams';
+import {PublicLayout} from "src/components";
 
 const histories = [
   {

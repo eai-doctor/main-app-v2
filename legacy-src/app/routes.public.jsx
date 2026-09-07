@@ -7,9 +7,9 @@ import {
     HelpCenter,
     LegalPage,
     DemoRequest
-} from 'legacy-src/pages/public';
+} from 'src/pages/public';
 
-import { PublicOnlyGuard } from "legacy-src/app/RouteGuard";
+import { PublicOnlyGuard } from "src/app/RouteGuard";
 
 
 export const publicRoutes = [

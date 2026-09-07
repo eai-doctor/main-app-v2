@@ -1,5 +1,5 @@
 // utils/fhirToPatientData.js
-import { parseDisplayData } from 'legacy-src/pages/patient/profile/utils';
+import { parseDisplayData } from 'src/pages/patient/profile/utils';
 
 function mapCondition(res) {
   const coding = res.code?.coding?.[0] || {};

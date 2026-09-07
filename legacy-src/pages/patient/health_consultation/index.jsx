@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useAuth } from 'legacy-src/context/AuthContext';
+import { useAuth } from 'src/context/AuthContext';
 
-import { FreeMessageLimitModal } from "legacy-src/pages/public";
-import { NavBar, ProfileDropdown } from "legacy-src/components";
-import chatApi from 'legacy-src/api/chatApi';
-import consultationApi from 'legacy-src/api/consultationApi';
-import ChatboxModal from "legacy-src/pages/public/modal/ChatboxModal";
-import { useAuthModal } from 'legacy-src/context/AuthModalContext';
-import LanguageSwitcher from "legacy-src/components/LanguageSwitcher";
+import { FreeMessageLimitModal } from "src/pages/public";
+import { NavBar, ProfileDropdown } from "src/components";
+import chatApi from 'src/api/chatApi';
+import consultationApi from 'src/api/consultationApi';
+import ChatboxModal from "src/pages/public/modal/ChatboxModal";
+import { useAuthModal } from 'src/context/AuthModalContext';
+import LanguageSwitcher from "src/components/LanguageSwitcher";
 
 
 import ChatSummaryModal from './components/modals/ChatSummaryModal';

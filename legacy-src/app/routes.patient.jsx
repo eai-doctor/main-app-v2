@@ -3,9 +3,9 @@ import {
   MedicalProfile,
   HealthConsultation,
   MedicalReportAnalysis,
-} from 'legacy-src/pages/patient';
-import { TriageEngine } from 'legacy-src/pages/public/function';
-import { PatientOnlyGuard } from "legacy-src/app/RouteGuard";
+} from 'src/pages/patient';
+import { TriageEngine } from 'src/pages/public/function';
+import { PatientOnlyGuard } from "src/app/RouteGuard";
 
 export const patientRoutes = [
   { path: "/", element: <PersonalHome /> },

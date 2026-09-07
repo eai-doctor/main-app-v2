@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import chatApi from 'legacy-src/api/chatApi';
+import chatApi from 'src/api/chatApi';
 
 export function useSymptomChat() {
   const [open, setOpen] = useState(false);

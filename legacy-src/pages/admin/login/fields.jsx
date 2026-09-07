@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Lock, User, Eye, EyeOff } from "lucide-react";
-import { Button, Input, Label } from "legacy-src/components/ui";
-import { useAuth } from "legacy-src/context/AuthContext";
+import { Button, Input, Label } from "src/components/ui";
+import { useAuth } from "src/context/AuthContext";
 
 export default function AdminLoginFields() {
   const [formData, setFormData] = useState({ email: "", password: "" });

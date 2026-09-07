@@ -5,12 +5,12 @@ import {
   CheckCircle, Mail, User, Phone, Building2, MessageSquare,
   Sparkles, Shield, Clock, TrendingUp
 } from "lucide-react";
-import { Button, Input, Label } from "legacy-src/components/ui";
+import { Button, Input, Label } from "src/components/ui";
 import logoImage from "/images/logo.png";
 import Header from "./component/header";
 import LoginModal from "./modal/login";
 
-import dbHelperApi from "legacy-src/api/dbHelperApi"; 
+import dbHelperApi from "src/api/dbHelperApi"; 
 
 
 function DemoRequest() {

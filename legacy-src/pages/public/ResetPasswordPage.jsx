@@ -1,8 +1,8 @@
 // pages/ResetPasswordPage.jsx
 import React, { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import { authResetPassword } from 'legacy-src/api/authApi';
-import { Input } from 'legacy-src/components/ui';
+import { authResetPassword } from 'src/api/authApi';
+import { Input } from 'src/components/ui';
 import { Eye, EyeOff } from 'lucide-react';
 
 export default function ResetPasswordPage() {

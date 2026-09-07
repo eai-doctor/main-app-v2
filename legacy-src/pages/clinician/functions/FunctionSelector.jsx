@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import Header from "legacy-src/components/Header";
-import { NavBar, SystemStatus } from "legacy-src/components";
+import Header from "src/components/Header";
+import { NavBar, SystemStatus } from "src/components";
 import { 
   AiIcon, 
   CalendarIcon, 
@@ -13,7 +13,7 @@ import {
   DocumentIcon, 
   PillIcon, 
   MicroscopeIcon 
-} from "legacy-src/components/ui/icons";
+} from "src/components/ui/icons";
 
 function FunctionSelector() {
   const navigate = useNavigate();

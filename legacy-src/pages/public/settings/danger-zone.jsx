@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, CardHeader } from './components/card';
-import { Button ,StatusBanner } from 'legacy-src/components/ui';
+import { Button ,StatusBanner } from 'src/components/ui';
 
 const DangerZoneSection = ({ onRequestDelete, t }) => {
   return (

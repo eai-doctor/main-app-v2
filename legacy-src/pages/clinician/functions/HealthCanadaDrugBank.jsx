@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
-import { Header, ExternalApiNotice, NavBar } from "legacy-src/components";
-import { PillIcon, AlertIcon } from "legacy-src/components/ui/icons";
-import functionApi from "legacy-src/api/functionApi";
+import { Header, ExternalApiNotice, NavBar } from "src/components";
+import { PillIcon, AlertIcon } from "src/components/ui/icons";
+import functionApi from "src/api/functionApi";
 
 
 function HealthCanadaDrugBank() {

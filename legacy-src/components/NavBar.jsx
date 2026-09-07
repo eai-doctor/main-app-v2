@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ProfileDropdown from "./ProfileDropdown";
 import logoImage from "/images/logo.png";
-import { useAuth } from "legacy-src/context/AuthContext";
+import { useAuth } from "src/context/AuthContext";
 
 export default function NavBar({handleOnClickBack}) {
   const navigate = useNavigate();

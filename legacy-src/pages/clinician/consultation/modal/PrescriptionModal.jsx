@@ -4,8 +4,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { marked } from "marked";
 
-import { PillIcon, ClipboardIcon, DocumentIcon, WarningIcon, ClockIcon, UploadIcon } from "legacy-src/components/ui/icons";
-import { updatePrescription } from 'legacy-src/api/consultationApi';
+import { PillIcon, ClipboardIcon, DocumentIcon, WarningIcon, ClockIcon, UploadIcon } from "src/components/ui/icons";
+import { updatePrescription } from 'src/api/consultationApi';
 
 export default function PrescriptionModal({ prescription, prescriptionId, onClose, isGenerating, patientInfo, selectingId }) {
   const { t } = useTranslation(['clinic', 'common']);

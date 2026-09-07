@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
-import { formatDate } from "legacy-src/utils/DateUtils";
-import { StethoscopeIcon } from "legacy-src/components/ui/icons";
+import { formatDate } from "src/utils/DateUtils";
+import { StethoscopeIcon } from "src/components/ui/icons";
 
 export default function Allergies({ allergies }) {
   const { t } = useTranslation(['clinic', 'common']);

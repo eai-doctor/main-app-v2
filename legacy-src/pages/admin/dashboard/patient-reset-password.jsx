@@ -1,7 +1,7 @@
 // AdminDoctorRegister.jsx
 import { useState } from "react";
 import { User, Lock, Eye, EyeOff, Stethoscope, Phone, Building2, ChevronDown, CheckCircle2, AlertCircle } from "lucide-react";
-import { authPatientResetPassword } from 'legacy-src/api/authApi';
+import { authPatientResetPassword } from 'src/api/authApi';
 
 const FIELD_CONFIG = [
   {

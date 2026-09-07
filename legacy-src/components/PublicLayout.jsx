@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import LoginModal from "legacy-src/pages/public/clinic-join/modal/login";
-import { headerMenus } from "legacy-src/pages/public/clinic-join/constant";
-import Header from "legacy-src/pages/public/clinic-join/component/header";
+import LoginModal from "src/pages/public/clinic-join/modal/login";
+import { headerMenus } from "src/pages/public/clinic-join/constant";
+import Header from "src/pages/public/clinic-join/component/header";
 
 function PublicLayoutInner({children, mode}) {
  const [modalOpen, setModalOpen] = useState(mode=="login"); // mode = login, scrolling

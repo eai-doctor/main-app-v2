@@ -2,11 +2,11 @@ import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { useAuth } from "legacy-src/context/AuthContext";
-import { FeatureCard, Header, SystemStatus } from "legacy-src/components";
-import { ChatIcon, DnaIcon, AlertIcon, ClipboardListIcon, NutritionConsultationIcon, DocumentIcon } from "legacy-src/components/ui/icons";
-import { AuthModalProvider, useAuthModal } from "legacy-src/context/AuthModalContext";
-import config from "legacy-src/config";
+import { useAuth } from "src/context/AuthContext";
+import { FeatureCard, Header, SystemStatus } from "src/components";
+import { ChatIcon, DnaIcon, AlertIcon, ClipboardListIcon, NutritionConsultationIcon, DocumentIcon } from "src/components/ui/icons";
+import { AuthModalProvider, useAuthModal } from "src/context/AuthModalContext";
+import config from "src/config";
 
 function PersonalHome() {
   const navigate = useNavigate();

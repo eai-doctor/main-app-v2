@@ -1,7 +1,7 @@
   import {
   AiIcon, MicrophoneIcon, ClipboardIcon, LightbulbIcon,
   MailIcon, CheckCircleIcon, XCircleIcon, ClockIcon, UserIcon
-} from 'legacy-src/components/ui/icons';
+} from 'src/components/ui/icons';
 
 const ModalHeader = ({ title, subtitle, badge, onClose }) => (
     <div className="flex items-center justify-between px-5 py-[18px] border-b border-slate-100 bg-[#f5f7ff] sticky top-0 z-10">

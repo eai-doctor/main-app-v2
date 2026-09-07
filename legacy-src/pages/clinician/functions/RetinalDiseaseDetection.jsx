@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import functionApi from 'legacy-src/api/functionApi'
-import { NavBar } from 'legacy-src/components'
+import functionApi from 'src/api/functionApi'
+import { NavBar } from 'src/components'
 import { useState, useRef, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 

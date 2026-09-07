@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["legacy-src/*"]
-    }
-  },
-  "exclude": ["node_modules"]
-}

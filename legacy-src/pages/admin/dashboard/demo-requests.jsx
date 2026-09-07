@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import DataTable, { AvatarCell, StatusBadge } from "legacy-src/components/DataTable";
-import dbHelperApi from "legacy-src/api/dbHelperApi";
+import DataTable, { AvatarCell, StatusBadge } from "src/components/DataTable";
+import dbHelperApi from "src/api/dbHelperApi";
 
 const columns = [
   { label: "Name", key: "name"},

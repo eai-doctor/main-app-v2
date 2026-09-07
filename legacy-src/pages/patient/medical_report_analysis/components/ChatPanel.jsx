@@ -1,4 +1,4 @@
-import { AiIcon, ClockIcon } from 'legacy-src/components/ui/icons';
+import { AiIcon, ClockIcon } from 'src/components/ui/icons';
 
 function ChatPanel({
   activeTab,

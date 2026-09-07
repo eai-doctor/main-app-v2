@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Header } from "legacy-src/components";
+import { Header } from "src/components";
 import { Printer, ArrowLeft, FileText, Download, Shield, FileSearch } from "lucide-react";
-import PublicLayout from "legacy-src/components/PublicLayout";
+import PublicLayout from "src/components/PublicLayout";
 
 const DOCUMENTS = [
   {

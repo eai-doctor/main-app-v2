@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Lock, User, Eye, EyeOff, ShieldCheck } from "lucide-react";
-import { Button, Input, Label } from "legacy-src/components/ui";
-import { authAdminReigster } from "legacy-src/api/authApi";
+import { Button, Input, Label } from "src/components/ui";
+import { authAdminReigster } from "src/api/authApi";
 
 export default function AdminRegisterFields() {
   const [formData, setFormData] = useState({

@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from "legacy-src/hooks";
+import { useLanguage } from "src/hooks";
 
-import Header from "legacy-src/components/Header";
-import { AiIcon } from "legacy-src/components/ui/icons";
-import chatApi from "legacy-src/api/chatApi";
-import { NavBar } from "legacy-src/components";
+import Header from "src/components/Header";
+import { AiIcon } from "src/components/ui/icons";
+import chatApi from "src/api/chatApi";
+import { NavBar } from "src/components";
 
 const SUGGESTIONS = {
   en: [

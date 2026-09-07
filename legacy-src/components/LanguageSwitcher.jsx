@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
-import { useLanguage } from 'legacy-src/hooks';
+import { useLanguage } from 'src/hooks';
 
 export default function LanguageSwitcher() {
   const { currentLanguage, changeLanguage, LANGUAGES } = useLanguage();

@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from "react";
-import { recordConsultationStream } from "legacy-src/api/consultationApi"
+import { recordConsultationStream } from "src/api/consultationApi"
 const SILENCE_THRESHOLD_DB = -35;  // 이 dB 이하면 무음으로 판단
 const SILENCE_TIMEOUT_MS   = 5000; // 5초 무음 시 자동 종료
 

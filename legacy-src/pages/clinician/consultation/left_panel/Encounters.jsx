@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { formatDate } from "legacy-src/utils/DateUtils";
-import { CalendarIcon } from "legacy-src/components/ui/icons";
+import { formatDate } from "src/utils/DateUtils";
+import { CalendarIcon } from "src/components/ui/icons";
 
 const formatEncounterDetails = (entry, t) => {
   const fields = [

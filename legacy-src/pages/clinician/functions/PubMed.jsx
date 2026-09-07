@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
-import Header from "legacy-src/components/Header";
-import { DocumentIcon, BooksIcon, MicroscopeIcon, AlertIcon } from "legacy-src/components/ui/icons";
-import functionApi from "legacy-src/api/functionApi";
-import { NavBar, ExternalApiNotice } from "legacy-src/components";
+import Header from "src/components/Header";
+import { DocumentIcon, BooksIcon, MicroscopeIcon, AlertIcon } from "src/components/ui/icons";
+import functionApi from "src/api/functionApi";
+import { NavBar, ExternalApiNotice } from "src/components";
 
 
 function PubMed() {

@@ -2,12 +2,12 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from "react-router-dom";
 import { Search, ChevronRight, AlertCircle, Loader2 } from "lucide-react";
-import { useLanguage } from "legacy-src/hooks";
+import { useLanguage } from "src/hooks";
 
-import { NavBar, SystemStatus } from "legacy-src/components";
-import { UserIcon } from "legacy-src/components/ui/icons";
-import { useAuth } from "legacy-src/context/AuthContext";
-import { getPatients, getPatientDetails } from "legacy-src/api/patientApi";
+import { NavBar, SystemStatus } from "src/components";
+import { UserIcon } from "src/components/ui/icons";
+import { useAuth } from "src/context/AuthContext";
+import { getPatients, getPatientDetails } from "src/api/patientApi";
 
 const CACHE_TTL_MS = 5 * 60 * 1000;
 

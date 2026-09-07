@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import {
   AiIcon, MicrophoneIcon, ClipboardIcon, LightbulbIcon,
   MailIcon, CheckCircleIcon, XCircleIcon, ClockIcon, UserIcon
-} from 'legacy-src/components/ui/icons';
+} from 'src/components/ui/icons';
 
 import ModalHeader from './ModalHeader';
 

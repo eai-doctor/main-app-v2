@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
-import { useAuth } from "legacy-src/context/AuthContext";
-import { LoadingScreen } from "legacy-src/components";
+import { useAuth } from "src/context/AuthContext";
+import { LoadingScreen } from "src/components";
 
 function RouteGuard({
   children,

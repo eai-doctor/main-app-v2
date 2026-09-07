@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Outlet, useLocation  } from "react-router-dom";
 
-import { useAuth } from 'legacy-src/context/AuthContext';
-import { useLanguage, useSessionGuard } from "legacy-src/hooks";
+import { useAuth } from 'src/context/AuthContext';
+import { useLanguage, useSessionGuard } from "src/hooks";
 
 import AppFooter from './AppFooter';
-import { AuthModalProvider, useAuthModal } from "legacy-src/context/AuthModalContext";
-import { LoginModal } from "legacy-src/pages/public";
-import medicalRecordApi from "legacy-src/api/medicalRecordApi";
+import { AuthModalProvider, useAuthModal } from "src/context/AuthModalContext";
+import { LoginModal } from "src/pages/public";
+import medicalRecordApi from "src/api/medicalRecordApi";
 
 function AppLayoutInner() {
   const { user, loading, logout } = useAuth();

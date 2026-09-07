@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { formatDate } from "legacy-src/utils/DateUtils";
-import { isSensitiveDiagnosis } from 'legacy-src/utils/sensitiveConditions';
+import { formatDate } from "src/utils/DateUtils";
+import { isSensitiveDiagnosis } from 'src/utils/sensitiveConditions';
 
 import ChatLogModal from "./ChatLogModal";
 
 import {
   StethoscopeIcon,
-} from "legacy-src/components/ui/icons";
+} from "src/components/ui/icons";
 
 export default function ActiveConditions({ activeConditions }) {
   const { t } = useTranslation(['clinic', 'common']);

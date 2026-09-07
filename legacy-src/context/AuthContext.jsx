@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import config from "legacy-src/config";
-import { authLogin, authMe, authLogout, authRefresh, authRegister,authVerifyEmail, authResendVerification, authForgotPassword, authAdminLogin } from "legacy-src/api/authApi";
-import { setStoredToken, getStoredToken, clearStoredToken } from "legacy-src/api/axiosBase";
+import config from "src/config";
+import { authLogin, authMe, authLogout, authRefresh, authRegister,authVerifyEmail, authResendVerification, authForgotPassword, authAdminLogin } from "src/api/authApi";
+import { setStoredToken, getStoredToken, clearStoredToken } from "src/api/axiosBase";
 
 const AuthContext = createContext(null);
 

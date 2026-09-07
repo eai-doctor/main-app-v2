@@ -1,5 +1,5 @@
 import createApi from "./axiosBase";
-import config from "legacy-src/config";
+import config from "src/config";
 
 // common api path
 const medicalApi = createApi(config.backendUrl);

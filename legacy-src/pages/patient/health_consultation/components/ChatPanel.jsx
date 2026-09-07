@@ -1,7 +1,7 @@
 import {
   AiIcon, MicrophoneIcon, ClipboardIcon, LightbulbIcon,
   MailIcon, CheckCircleIcon, XCircleIcon, ClockIcon, UserIcon
-} from 'legacy-src/components/ui/icons';
+} from 'src/components/ui/icons';
 
 function ChatPanel({
     messages, 

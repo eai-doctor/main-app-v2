@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AiIcon, CheckCircleIcon, XCircleIcon } from 'legacy-src/components/ui/icons';
-import { useAuthModal } from 'legacy-src/context/AuthModalContext';
+import { AiIcon, CheckCircleIcon, XCircleIcon } from 'src/components/ui/icons';
+import { useAuthModal } from 'src/context/AuthModalContext';
 
 export default function FreeMessageLimitModal({ isOpen, onClose }) {
   const navigate = useNavigate();

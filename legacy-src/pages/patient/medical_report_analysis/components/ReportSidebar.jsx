@@ -1,4 +1,4 @@
-import { DocumentIcon, UploadIcon, ScanIcon, ImageIcon, CheckCircleIcon } from 'legacy-src/components/ui/icons';
+import { DocumentIcon, UploadIcon, ScanIcon, ImageIcon, CheckCircleIcon } from 'src/components/ui/icons';
 
 const SAVE_STATUS_UI = {
   saving: { label: 'Saving…', cls: 'text-slate-400' },

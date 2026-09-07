@@ -1,4 +1,4 @@
-import config from "legacy-src/config";
+import config from "src/config";
 import createApi from "./axiosBase";
 
 const authApi = createApi(config.authServiceUrl);

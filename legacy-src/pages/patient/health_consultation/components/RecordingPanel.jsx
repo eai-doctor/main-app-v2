@@ -1,5 +1,5 @@
 import React from 'react';
-import { MicrophoneIcon, ClipboardIcon } from 'legacy-src/components/ui/icons';
+import { MicrophoneIcon, ClipboardIcon } from 'src/components/ui/icons';
 
 // import ChatHistoryPanel from './ChatHistoryPanel';
 // import PreviousSymptomsPanel from './PreviousSymptomsPanel';

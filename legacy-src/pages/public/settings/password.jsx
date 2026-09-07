@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardHeader } from './components/card';
-import { Button ,StatusBanner } from 'legacy-src/components/ui';
-import { authUpdateProfile } from 'legacy-src/api/authApi';
+import { Button ,StatusBanner } from 'src/components/ui';
+import { authUpdateProfile } from 'src/api/authApi';
 
 function PasswordSection({ changePassword, t, inputCls  }) {
   const [pw, setPw] = useState({ current: '', next: '', confirm: '' });

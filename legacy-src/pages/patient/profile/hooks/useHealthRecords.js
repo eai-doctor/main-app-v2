@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { TAB_KEYS } from 'legacy-src/constants/fhir';
+import { TAB_KEYS } from 'src/constants/fhir';
 
 export const useHealthRecords = (t, fhirPatientId, userId, setError, setLoading,  cacheRef, medicalRecordApi, handleCloseModal) => {
   const [recordsByTab, setRecordsByTab] = useState({});

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AiIcon, XCircleIcon, LightbulbIcon, ClockIcon } from 'legacy-src/components/ui/icons';
-import chatApi from "legacy-src/api/chatApi";
+import { AiIcon, XCircleIcon, LightbulbIcon, ClockIcon } from 'src/components/ui/icons';
+import chatApi from "src/api/chatApi";
 
 export default function ChatboxModal({ isOpen, onClose, patientSummary }) {
   const [messages, setMessages] = useState([]);

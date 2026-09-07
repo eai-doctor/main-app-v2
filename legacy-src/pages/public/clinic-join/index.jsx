@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { X, ChevronRight, Zap, Brain, Shield, Activity, Globe, ArrowRight, Stethoscope, FlaskConical, ScanLine } from "lucide-react";
 
-import PublicLayout from "legacy-src/components/PublicLayout";
+import PublicLayout from "src/components/PublicLayout";
 
 function Stat({ value, label }) {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClipboardIcon } from 'legacy-src/components/ui/icons';
+import { ClipboardIcon } from 'src/components/ui/icons';
 
 function PreviousSymptomsPanel({ previousSymptoms, isSymptomsLoading, SYMPTOM_SEVERITY_CLASSES, t }) {
   return (

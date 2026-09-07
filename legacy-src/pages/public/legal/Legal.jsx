@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { ChevronDown, ChevronRight, Shield, Cookie, FileText, ExternalLink, ArrowRight, CheckCircle, Printer, ArrowLeft, Download, FileSearch } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import logoImage from "/images/logo.png";
-import PublicLayout from 'legacy-src/components/PublicLayout';
+import PublicLayout from 'src/components/PublicLayout';
 
 function TableOfContents({ sections, activeId, onSelect }) {
   return (

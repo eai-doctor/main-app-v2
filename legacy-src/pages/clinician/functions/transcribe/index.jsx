@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import Header from "legacy-src/components/Header";
-import { useAuth } from 'legacy-src/context/AuthContext';
-import consultationApi from "legacy-src/api/consultationApi";
+import Header from "src/components/Header";
+import { useAuth } from 'src/context/AuthContext';
+import consultationApi from "src/api/consultationApi";
 
 const WHISPER_HALLUCINATIONS = [
   "thank you for watching", "thanks for watching", "please subscribe",

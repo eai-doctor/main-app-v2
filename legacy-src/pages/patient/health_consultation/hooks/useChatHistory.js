@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import chatApi from 'legacy-src/api/chatApi';
+import chatApi from 'src/api/chatApi';
 
 export const useChatHistory = (isAuthenticated, isPatient, loading, userId) => {
   const [chatHistory, setChatHistory] = useState([]);

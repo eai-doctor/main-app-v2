@@ -3,7 +3,7 @@ import {
     PatientSelector,
     Consultation,
     FunctionSelector,
-} from 'legacy-src/pages/clinician'
+} from 'src/pages/clinician'
 
 export const clinicianRoutes = [
   {

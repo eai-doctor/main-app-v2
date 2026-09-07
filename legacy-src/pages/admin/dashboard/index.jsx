@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { useAuth } from "legacy-src/context/AuthContext";
+import { useAuth } from "src/context/AuthContext";
 
 import AdminDoctorRegister from "./doctor-register";
 import DashboardContent from "./dashboard-content";

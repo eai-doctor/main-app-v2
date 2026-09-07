@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
-import { endConsultation, uploadReport } from "legacy-src/api/consultationApi";
+import { endConsultation, uploadReport } from "src/api/consultationApi";
 import { jsPDF } from 'jspdf';
 import { marked } from 'marked';
 
@@ -10,7 +10,7 @@ import {
   MailIcon,
   XCircleIcon,
   CheckCircleIcon 
-} from "legacy-src/components/ui/icons";
+} from "src/components/ui/icons";
 
 export default function SendSummaryModal ({
   patientData,

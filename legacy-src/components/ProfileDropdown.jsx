@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import ReactDOM from "react-dom";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from 'legacy-src/context/AuthContext';
+import { useAuth } from 'src/context/AuthContext';
 import { useTranslation } from "react-i18next";
 
 function ProfileDropdown({ variant = "light" }) {

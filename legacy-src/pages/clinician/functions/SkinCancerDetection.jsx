@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
-import { NavBar } from 'legacy-src/components'
-import functionApi from 'legacy-src/api/functionApi'
+import { NavBar } from 'src/components'
+import functionApi from 'src/api/functionApi'
 import { useTranslation } from 'react-i18next'
 
 function SkinCancerDetection() {

@@ -10,8 +10,8 @@ import {
     HealthCanadaDrugBank, 
     // OpenEMR, 
     TranscribeDictate, 
-} from 'legacy-src/pages/clinician/functions';
-import { TriageEngine } from 'legacy-src/pages/public/function';
+} from 'src/pages/clinician/functions';
+import { TriageEngine } from 'src/pages/public/function';
 
 
 export const functionRoutes = [

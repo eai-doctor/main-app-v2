@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from "legacy-src/hooks";
+import { useLanguage } from "src/hooks";
 
 import {
   PillIcon,
@@ -10,7 +10,7 @@ import {
   UserIcon,
   StethoscopeIcon,
   ChartIcon 
-} from "legacy-src/components/ui/icons";
+} from "src/components/ui/icons";
 
 const calculateAge = (dateStr) => {
   if (!dateStr) return null;

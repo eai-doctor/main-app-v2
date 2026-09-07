@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import chatApi from 'legacy-src/api/chatApi';
-import consultationApi from 'legacy-src/api/consultationApi';
+import chatApi from 'src/api/chatApi';
+import consultationApi from 'src/api/consultationApi';
 import { AUDIO_CONSTRAINTS, FREE_MESSAGE_LIMIT } from '../constants';
 import { getStoredMessageCount, incrementMessageCount } from '../utils';
 

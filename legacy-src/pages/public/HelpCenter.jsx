@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Search, ChevronRight, ChevronDown, BookOpen, Zap, Shield, Users, Settings, Globe, MessageCircle, Phone, Mail, ExternalLink, Brain, FileText, Video, ArrowRight } from 'lucide-react';
-import {PublicLayout} from 'legacy-src/components';
+import {PublicLayout} from 'src/components';
 
 const CATEGORIES = [
   {

@@ -1,7 +1,7 @@
 // AdminDoctorRegister.jsx
 import { useState } from "react";
 import { User, Lock, Eye, EyeOff, Stethoscope, Phone, Building2, ChevronDown, CheckCircle2, AlertCircle } from "lucide-react";
-import { authDoctorRegister } from "legacy-src/api/authApi";
+import { authDoctorRegister } from "src/api/authApi";
 
 const SPECIALTIES = [
   "Cardiology", "Dermatology", "Emergency Medicine", "Endocrinology",

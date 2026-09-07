@@ -6,15 +6,15 @@ import MainLeftPanel from "./left_panel";
 import MainRightPanel from "./right_panel/MainRightPanel";
 import McgillPredictionModal from "./modal/McgillPredictionModal";
 
-import { blockCopy } from "legacy-src/utils/privacy";
-import { useConsultation, useLanguage } from "legacy-src/hooks";
-import { TAB_KEYS } from "legacy-src/constants/fhir";
-import { fhirRecordsToPatientData } from "legacy-src/utils/fhir";
+import { blockCopy } from "src/utils/privacy";
+import { useConsultation, useLanguage } from "src/hooks";
+import { TAB_KEYS } from "src/constants/fhir";
+import { fhirRecordsToPatientData } from "src/utils/fhir";
 
-import { generateConsultationSummary } from "legacy-src/api/consultationApi";
-import consultationApi from "legacy-src/api/consultationApi";
-import medicalRecordApi from "legacy-src/api/medicalRecordApi";
-import { getPatientDetails } from "legacy-src/api/patientApi";
+import { generateConsultationSummary } from "src/api/consultationApi";
+import consultationApi from "src/api/consultationApi";
+import medicalRecordApi from "src/api/medicalRecordApi";
+import { getPatientDetails } from "src/api/patientApi";
 
 export default function Consultation() {
   const location = useLocation();

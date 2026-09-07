@@ -1,11 +1,11 @@
 import { useCallback } from "react";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "legacy-src/context/AuthContext";
+import { useAuth } from "src/context/AuthContext";
 import { MessageSquare, Dna, ClipboardList, LogIn } from "lucide-react";
-import { FeatureCard, Header, SystemStatus } from "legacy-src/components";
-import { UserIcon, StethoscopeIcon, BooksIcon, SettingsIcon } from "legacy-src/components/ui/icons";
-import config from "legacy-src/config";
+import { FeatureCard, Header, SystemStatus } from "src/components";
+import { UserIcon, StethoscopeIcon, BooksIcon, SettingsIcon } from "src/components/ui/icons";
+import config from "src/config";
 
 /* -------------------- Main Page -------------------- */
 export default function Home() {

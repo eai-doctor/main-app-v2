@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClipboardIcon } from 'legacy-src/components/ui/icons';
+import { ClipboardIcon } from 'src/components/ui/icons';
 import { useSymptomChat } from './useSymptomChat';
 import SymptomChatDrawer from './SymptomChatDrawer';
 import SymptomChatSheet from './SymptomChatSheet';

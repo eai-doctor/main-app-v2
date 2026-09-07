@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Fields from "./components/Fields";
-import triageEngineApi from "legacy-src/api/triageApi";
-import { NavBar } from "legacy-src/components";
+import triageEngineApi from "src/api/triageApi";
+import { NavBar } from "src/components";
 import { useTranslation } from "react-i18next";
-import useLanguage from "legacy-src/hooks/useLanguage";
+import useLanguage from "src/hooks/useLanguage";
 
 export const STEPS = {
   DEMOGRAPHICS: 0,

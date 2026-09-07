@@ -9,7 +9,7 @@ import {
   FAMILY_RELATIONSHIPS,
   ADMIN_GENDER,
 } from "../constants";
-import { getTodayString } from "legacy-src/utils/DateUtils";
+import { getTodayString } from "src/utils/DateUtils";
 
 export default function FormModal({
   tab,

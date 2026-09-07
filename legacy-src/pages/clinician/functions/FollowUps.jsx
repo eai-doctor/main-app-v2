@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from "legacy-src/hooks";
+import { useLanguage } from "src/hooks";
 
-import Header from "legacy-src/components/Header";
-import { NavBar, SystemStatus } from "legacy-src/components";
+import Header from "src/components/Header";
+import { NavBar, SystemStatus } from "src/components";
 import {
   WarningIcon,
   MailIcon,
@@ -13,10 +13,10 @@ import {
   SearchIcon,
   UserIcon,
   LightbulbIcon,
-} from "legacy-src/components/ui/icons";
+} from "src/components/ui/icons";
 
-import { getPatients,getAssignedPatients } from "legacy-src/api/patientApi";
-import functionApi from "legacy-src/api/functionApi";
+import { getPatients,getAssignedPatients } from "src/api/patientApi";
+import functionApi from "src/api/functionApi";
 
 /* ------------------------------------------------------------------ */
 /* Section Header (Encounters 패턴)                                     */

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from "legacy-src/hooks";
+import { useLanguage } from "src/hooks";
 
-import Header from "legacy-src/components/Header";
-import { SearchIcon } from "legacy-src/components/ui/icons";
-import { NavBar, SystemStatus } from "legacy-src/components";
-import { getPatients, getAssignedPatients, getPatientDetails } from "legacy-src/api/patientApi";
+import Header from "src/components/Header";
+import { SearchIcon } from "src/components/ui/icons";
+import { NavBar, SystemStatus } from "src/components";
+import { getPatients, getAssignedPatients, getPatientDetails } from "src/api/patientApi";
 
 /* ------------------------------------------------------------------ */
 /* Section Header (Encounters 패턴)                                     */

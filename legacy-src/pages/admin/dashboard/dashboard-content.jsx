@@ -1,4 +1,4 @@
-import DataTable, { AvatarCell, StatusBadge } from "legacy-src/components/DataTable";
+import DataTable, { AvatarCell, StatusBadge } from "src/components/DataTable";
 
 const columns = [
   {

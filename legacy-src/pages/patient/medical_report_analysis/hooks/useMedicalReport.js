@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { useAuth } from 'legacy-src/context/AuthContext';
-import { uploadMedicalReport, chatMedicalReport, getMedicalReports, extractMedicalReportTests, saveMedicalReportTests } from 'legacy-src/api/chatApi';
+import { useAuth } from 'src/context/AuthContext';
+import { uploadMedicalReport, chatMedicalReport, getMedicalReports, extractMedicalReportTests, saveMedicalReportTests } from 'src/api/chatApi';
 
 const ACCEPTED_TYPES = ['application/pdf', 'image/jpeg', 'image/png'];
 const MAX_SIZE_MB = 10;

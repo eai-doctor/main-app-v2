@@ -1,5 +1,5 @@
 // src/api/patientApi.js
-import config from "legacy-src/config";
+import config from "src/config";
 import createApi from "./axiosBase";
 
 const patientApi = createApi(config.backendUrl);

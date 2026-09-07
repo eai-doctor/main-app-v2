@@ -1,4 +1,4 @@
-import {  AlertIcon } from "legacy-src/components/ui/icons";
+import {  AlertIcon } from "src/components/ui/icons";
 
 export default function ExternalApiNotice({ subject, service, onDismiss }) {
   return (

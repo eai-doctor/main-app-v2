@@ -2,8 +2,8 @@ import { useState } from "react"; // useNavigate가 필요하다면 추가하세
 import { useTranslation } from 'react-i18next';
 import { Lock, User, Eye, EyeOff } from "lucide-react"; // Eye, EyeOff 추가
 
-import { useAuth } from 'legacy-src/context/AuthContext';
-import { Button, Input, Label } from "legacy-src/components/ui";
+import { useAuth } from 'src/context/AuthContext';
+import { Button, Input, Label } from "src/components/ui";
 
 function Fields() {
   const { login } = useAuth();

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useAuth } from 'legacy-src/context/AuthContext';
-import { NavBar } from 'legacy-src/components';
+import { useAuth } from 'src/context/AuthContext';
+import { NavBar } from 'src/components';
 import { Card, CardHeader } from './components/card';
 
 import { PasswordSection } from './password';

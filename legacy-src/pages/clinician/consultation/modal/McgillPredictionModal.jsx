@@ -13,9 +13,9 @@ import {
   SearchIcon,
   UsersIcon,
   WarningIcon 
-} from "legacy-src/components/ui/icons";
-import functionApi from "legacy-src/api/functionApi";
-import consultationApi from "legacy-src/api/consultationApi";
+} from "src/components/ui/icons";
+import functionApi from "src/api/functionApi";
+import consultationApi from "src/api/consultationApi";
 
 
 export default function McgillPredictionModal ({

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useAuth } from "legacy-src/context/AuthContext";
-import { useAuthModal } from "legacy-src/context/AuthModalContext";
+import { useAuth } from "src/context/AuthContext";
+import { useAuthModal } from "src/context/AuthModalContext";
 import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
-import { Input } from "legacy-src/components/ui";
+import { Input } from "src/components/ui";
 
 const validatePassword = (pw) => ({
   length:    pw.length >= 8,

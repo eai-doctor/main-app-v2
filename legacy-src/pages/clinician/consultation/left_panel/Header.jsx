@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import { Plus, X } from "lucide-react";
 
-import { ProfileDropdown } from "legacy-src/components";
-import { PillIcon, MailIcon, AiIcon } from "legacy-src/components/ui/icons";
+import { ProfileDropdown } from "src/components";
+import { PillIcon, MailIcon, AiIcon } from "src/components/ui/icons";
 
 import PrescriptionModal from "../modal/PrescriptionModal";
 import SendSummaryModal from "../modal/SendSummaryModal";
-import ChatboxModal from "legacy-src/pages/public/modal/ChatboxModal";
+import ChatboxModal from "src/pages/public/modal/ChatboxModal";
 
-import { generatePrescription, generateConsultationSummary } from "legacy-src/api/consultationApi";
+import { generatePrescription, generateConsultationSummary } from "src/api/consultationApi";
 
 export default function Header({
   patientData,

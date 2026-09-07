@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardHeader } from './components/card';
-import { Button, StatusBanner } from 'legacy-src/components/ui';
-import { authUpdateProfile } from 'legacy-src/api/authApi';
+import { Button, StatusBanner } from 'src/components/ui';
+import { authUpdateProfile } from 'src/api/authApi';
 
 const inputCls =
   'w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2C3B8D] focus:border-transparent';

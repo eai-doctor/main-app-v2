@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { useTranslation } from 'react-i18next';
-import { formatDate } from "legacy-src/utils/DateUtils";
-import { PlusCircleIcon } from "legacy-src/components/ui/icons";
+import { formatDate } from "src/utils/DateUtils";
+import { PlusCircleIcon } from "src/components/ui/icons";
 
 export default function Lab({ labs, requestedLabs = [], patientId, setPatientData }) {
     const { t } = useTranslation(['clinic', 'common']);

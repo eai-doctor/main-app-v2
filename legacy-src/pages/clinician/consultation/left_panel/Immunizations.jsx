@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
-import { PillIcon } from "legacy-src/components/ui/icons";
-import { formatDate } from "legacy-src/utils/DateUtils";
+import { PillIcon } from "src/components/ui/icons";
+import { formatDate } from "src/utils/DateUtils";
 
 export default function Immunizations({ immunizations }) {
     const { t } = useTranslation(['clinic', 'common']);

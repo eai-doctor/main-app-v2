@@ -2,14 +2,14 @@ import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Stethoscope, User } from "lucide-react";
 
-import LanguageSwitcher from "legacy-src/components/LanguageSwitcher";
+import LanguageSwitcher from "src/components/LanguageSwitcher";
 
-import ProfileDropdown from "legacy-src/components/ProfileDropdown";
-import { useAuth } from "legacy-src/context/AuthContext";
+import ProfileDropdown from "src/components/ProfileDropdown";
+import { useAuth } from "src/context/AuthContext";
 import logoImage from "/images/logo.png";
 import { Button } from "./ui";
-import { useAuthModal } from "legacy-src/context/AuthModalContext";
-import { URLS }  from "legacy-src/constants/urls";
+import { useAuthModal } from "src/context/AuthModalContext";
+import { URLS }  from "src/constants/urls";
 
 function Header() {
   const { user, loading } = useAuth();

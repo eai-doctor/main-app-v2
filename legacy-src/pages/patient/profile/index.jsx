@@ -1,16 +1,16 @@
 import React, { useState, useRef, useCallback, useMemo, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
-import { useAuth } from 'legacy-src/context/AuthContext';
-import medicalRecordApi from "legacy-src/api/medicalRecordApi";
+import { useAuth } from 'src/context/AuthContext';
+import medicalRecordApi from "src/api/medicalRecordApi";
 
-import { SystemStatus, NavBar } from "legacy-src/components";
-import { getTodayString } from "legacy-src/utils/DateUtils";
+import { SystemStatus, NavBar } from "src/components";
+import { getTodayString } from "src/utils/DateUtils";
 
 import { SectionCard, FormModal } from "./components";
 import { parseDisplayData, formFromRecord } from "./utils";
 import { TAB_ICONS, EMPTY_FORMS } from "./constants";
 import { useHealthRecords } from "./hooks/useHealthRecords";
-import { TAB_KEYS } from "legacy-src/constants/fhir";
+import { TAB_KEYS } from "src/constants/fhir";
 
 export default function MedicalProfile() {
   const { t } = useTranslation(['patient', 'common']);

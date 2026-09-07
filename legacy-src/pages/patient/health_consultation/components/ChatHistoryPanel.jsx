@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ClockIcon } from 'legacy-src/components/ui/icons';
+import { ClockIcon } from 'src/components/ui/icons';
 import { useChatHistory } from '../hooks/useChatHistory';
 
 const formatDate = (dateStr) => {

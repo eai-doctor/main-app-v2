@@ -4,8 +4,8 @@ import { RouteGuard } from "./RouteGuard"
 
 import { clinicianRoutes } from "./routes.clinician";
 import { publicRoutes } from "./routes.public";
-import { patientRoutes } from "legacy-src/app/routes.patient";
-import { adminRoutes } from "legacy-src/app/routes.admin";
+import { patientRoutes } from "src/app/routes.patient";
+import { adminRoutes } from "src/app/routes.admin";
 import { functionRoutes } from "./routes.clinician.functions";
 
 

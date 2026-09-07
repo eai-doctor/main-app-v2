@@ -1,6 +1,6 @@
 import { Stethoscope, User, ArrowRight } from "lucide-react";
 import { useTranslation } from 'react-i18next';
-import { useAuth } from "legacy-src/context/AuthContext";
+import { useAuth } from "src/context/AuthContext";
 import { useLocation } from "react-router-dom";
 import logoImage from "/images/logo.png";
 

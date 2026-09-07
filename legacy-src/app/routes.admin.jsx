@@ -2,9 +2,9 @@ import {
     AdminRegister,
     AdminLogin,
     AdminDashboard
-} from 'legacy-src/pages/admin';
+} from 'src/pages/admin';
 
-import { AdminOnlyGuard } from "legacy-src/app/RouteGuard";
+import { AdminOnlyGuard } from "src/app/RouteGuard";
 
 
 export const adminRoutes = [

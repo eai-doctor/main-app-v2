@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
-import Header from "legacy-src/components/Header";
-import { BooksIcon, AlertIcon } from "legacy-src/components/ui/icons";
-import functionApi from "legacy-src/api/functionApi";
-import { NavBar } from "legacy-src/components";
+import Header from "src/components/Header";
+import { BooksIcon, AlertIcon } from "src/components/ui/icons";
+import functionApi from "src/api/functionApi";
+import { NavBar } from "src/components";
 
 function ExternalApiNotice({ service, onDismiss }) {
   return (

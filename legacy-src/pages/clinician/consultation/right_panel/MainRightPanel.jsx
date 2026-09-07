@@ -12,7 +12,7 @@ import {
   XCircleIcon,
   LightbulbIcon,
   AlertIcon
-} from "legacy-src/components/ui/icons";
+} from "src/components/ui/icons";
 
 export default function MainRightPanel({
   consulting, setConsulting, showSuccess,

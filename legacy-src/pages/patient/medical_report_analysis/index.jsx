@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from 'legacy-src/context/AuthContext';
-import { ProfileDropdown } from 'legacy-src/components';
-import { useAuthModal } from 'legacy-src/context/AuthModalContext';
+import { useAuth } from 'src/context/AuthContext';
+import { ProfileDropdown } from 'src/components';
+import { useAuthModal } from 'src/context/AuthModalContext';
 
 import { useMedicalReport } from './hooks/useMedicalReport';
 import ChatPanel from './components/ChatPanel';
