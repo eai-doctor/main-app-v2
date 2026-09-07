@@ -1,0 +1,12 @@
+{
+  "name": "eai-main-app",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "lucide-react": "^1.42.0",
+    "react-i18next": "^17.0.13"
+  }
+}
