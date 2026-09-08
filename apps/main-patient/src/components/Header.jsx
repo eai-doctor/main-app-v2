@@ -22,7 +22,7 @@ function Header() {
   const handleOnSignInBtnClick = () => openLogin();
   const onClickHeaderLogo = "/";
 
-  const portalSwitchHref = config.clinicPortalUrl+"/clinic-join"; 
+  const portalSwitchHref = config.clinicPortalUrl; 
   const portalSwitchLabel = t("common:buttons.clinicPortal","Clinic Portal");
   const PortalIcon = Stethoscope;
 

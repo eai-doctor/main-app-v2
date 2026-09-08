@@ -18,7 +18,8 @@ function RouteGuard({
 
   // 2. Auth check
   if (requireAuth && !isAuthenticated) {
-    return <Navigate to={config.clinicPortalUrl} replace />;
+    window.location.replace(config.clinicPortalUrl);
+    return null;
   }
 
   // 3. Role check

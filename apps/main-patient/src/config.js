@@ -1,7 +1,4 @@
 function getBase(path, envVar, localFallback) {
-
-  console.log("getBase called with:", { path, envVar, localFallback });
-  
   if (envVar) {
     return envVar.replace(/\/$/, "");
   }
