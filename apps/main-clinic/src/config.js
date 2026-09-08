@@ -1,11 +1,10 @@
 function getBase(path, envVar, localFallback) {
+  if (import.meta.env.DEV) {
+    return localFallback.replace(/\/$/, "");
+  }
 
   if (envVar) {
     return envVar.replace(/\/$/, "");
-  }
-
-  if (import.meta.env.DEV) {
-    return localFallback.replace(/\/$/, "");
   }
 
   return path.replace(/\/$/, "");
@@ -29,8 +28,8 @@ const config = {
   enableEmail: import.meta.env.VITE_ENABLE_EMAIL !== "false",
   enableSms: import.meta.env.VITE_ENABLE_SMS !== "false",
 
-  geneticConsultationUrl : getBase("http://localhost:4200", import.meta.env.VITE_GENE_CONSULT, "http://localhost:4200"),
-  nutritionConsultationUrl : getBase("http://localhost:4200", import.meta.env.VITE_NUTRITION_CONSULT, "http://localhost:4200"),
+  geneticConsultationUrl : getBase("/gene-consultation", import.meta.env.VITE_GENE_CONSULT, "http://localhost:4200"),
+  nutritionConsultationUrl : getBase("/nutrition-consultation", import.meta.env.VITE_NUTRITION_CONSULT, "http://localhost:4200"),
 
   patientPortalUrl: import.meta.env.VITE_PATIENT_PORTAL_URL || "http://localhost:5171",
 };
