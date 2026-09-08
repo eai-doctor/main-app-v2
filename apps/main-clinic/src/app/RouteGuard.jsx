@@ -23,7 +23,8 @@ function RouteGuard({
   // 3. Role check
   if (roles && !roles.includes(user?.role)) {
     if (user?.role === "patient") {
-      return <Navigate to={config.patientPortalUrl} replace />;
+      window.location.replace(config.patientPortalUrl);
+      return null;
     }
     return <Navigate to="/" replace />;
   }
@@ -42,7 +43,8 @@ function PublicOnlyGuard({ children }) {
   if (loading) return null;
 
   if (isAuthenticated) {
-    return <Navigate to={user.role === "clinician" ? "/" : config.patientPortalUrl} replace />
+    window.location.replace(user.role === "clinician" ? "/clinics" : "/");
+    return null;
   }
 
   return children;
@@ -59,12 +61,8 @@ function PublicOnlyGuard({ children }) {
   }
 
   if (user?.role !== "patient") {
-    return (
-      <Navigate
-        to={user?.role === "clinician" ? "/" : config.patientPortalUrl}
-        replace
-      />
-    );
+    window.location.replace(user?.role === "clinician" ? "/" : config.patientPortalUrl);
+    return null;
   }
 
   return children;
