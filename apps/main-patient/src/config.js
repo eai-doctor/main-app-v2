@@ -1,17 +1,18 @@
 function getBase(path, envVar, localFallback) {
-  if (envVar) {
-    return envVar.replace(/\/$/, "");
-  }
-
   if (import.meta.env.DEV) {
     return localFallback.replace(/\/$/, "");
+  }
+
+  if (envVar) {
+    return envVar.replace(/\/$/, "");
   }
 
   return path.replace(/\/$/, "");
 }
 
 const config = {
-  backendUrl: getBase("/api/backend",  import.meta.env.VITE_BACK_URL, "http://localhost:5001"),
+  // backendUrl: getBase("/api/backend",  import.meta.env.VITE_BACK_URL, "http://localhost:5001"),
+  backendUrl: getBase("/api/backend",  null, "http://localhost:5001"),
   authServiceUrl: getBase("/api/auth", import.meta.env.VITE_AUTH_URL, "http://localhost:7860"),
   dpdServiceUrl: getBase("/api/dpd", import.meta.env.VITE_DPD_URL, "http://localhost:8010"),
   swintinyServiceUrl: getBase("/api/swintiny", import.meta.env.VITE_ST_URL, "http://localhost:5030"),
