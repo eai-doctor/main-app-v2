@@ -1,0 +1,13 @@
+{
+  "name": "@eai/ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "peerDependencies": {
+    "@mantine/core": "8.3.18",
+    "@tabler/icons-react": "*",
+    "react": "^19.0.0"
+  }
+}

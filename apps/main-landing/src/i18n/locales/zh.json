@@ -1,0 +1,189 @@
+{
+  "header": {
+    "forClinics": "机构入驻",
+    "signIn": "登录",
+    "createAccount": "注册",
+    "accountMenu": "账户菜单",
+    "open": "打开{{portal}}",
+    "signOut": "退出登录",
+    "language": "语言"
+  },
+  "portals": {
+    "patient": "患者门户",
+    "clinic": "临床门户"
+  },
+  "portalTitles": {
+    "patient": "患者门户",
+    "clinic": "临床门户"
+  },
+  "roles": {
+    "patient": "患者",
+    "clinician": "临床医生",
+    "admin": "管理员"
+  },
+  "landing": {
+    "heroTitle": "AI 医疗，随您所需",
+    "heroSubtitle": "使用完整的患者门户或临床门户，也可以单独打开任意一个 AI 工具。",
+    "welcomeBack": "欢迎回来",
+    "welcomeBackName": "欢迎回来，{{name}}",
+    "signedInSubtitle": "回到{{portal}}继续使用，或打开下面的任意 AI 工具。",
+    "patientPortal": {
+      "description": "您的健康档案和 AI 健康助手。",
+      "points": [
+        "AI 健康咨询与自助分诊",
+        "个人医疗档案集中管理",
+        "报告与基因分析"
+      ],
+      "primary": "登录",
+      "secondary": "注册"
+    },
+    "clinicPortal": {
+      "description": "内置 AI 的临床医生工作台。",
+      "points": [
+        "患者档案与 AI 辅助问诊",
+        "转录、影像 AI、药物与文献检索",
+        "新诊所入驻"
+      ],
+      "primary": "医生登录",
+      "secondary": "机构入驻"
+    },
+    "toolsTitle": "AI 工具",
+    "toolsSubtitle": "直接打开单个工具。标有「需登录」的工具需要账户。",
+    "forPatients": "患者",
+    "forClinicians": "临床医生",
+    "badgeSignIn": "需登录",
+    "badgeNewTab": "新标签页打开",
+    "wrongRole": "此工具仅供{{audience}}使用。您当前以{{role}}身份登录。",
+    "audiencePatients": "患者",
+    "audienceClinicians": "临床医生",
+    "goToPortal": "前往{{portal}}"
+  },
+  "features": {
+    "health-consultation": {
+      "title": "健康咨询",
+      "description": "向 AI 医生咨询您的症状和医疗报告。"
+    },
+    "self-triage": {
+      "title": "自助分诊",
+      "description": "AI 驱动的症状评估，判断就医紧急程度。"
+    },
+    "medical-profile": {
+      "title": "我的医疗档案",
+      "description": "集中管理症状、用药、生命体征和病史。"
+    },
+    "report-analysis": {
+      "title": "医疗报告分析",
+      "description": "上传报告，获得通俗易懂的解读。"
+    },
+    "genetic": {
+      "title": "基因咨询助手",
+      "description": "与 AI 助手讨论您的基因检测报告。"
+    },
+    "nutrition": {
+      "title": "营养咨询助手",
+      "description": "个性化营养建议与膳食规划。"
+    },
+    "patients": {
+      "title": "医生问诊助手",
+      "description": "打开患者档案，在 AI 辅助下问诊。"
+    },
+    "transcribe": {
+      "title": "转录与听写",
+      "description": "把问诊录音转成结构化的临床记录。"
+    },
+    "ask-ebo-ai": {
+      "title": "询问 EboAI",
+      "description": "基于循证医学回答临床问题。"
+    },
+    "skin-cancer": {
+      "title": "皮肤癌检测",
+      "description": "基于图像的皮肤病变筛查。"
+    },
+    "retinal": {
+      "title": "视网膜疾病检测",
+      "description": "眼底图像分析，筛查视网膜疾病。"
+    },
+    "pubmed": {
+      "title": "PubMed 文献检索",
+      "description": "检索医学文献并生成 AI 摘要。"
+    },
+    "merck": {
+      "title": "默克诊疗手册",
+      "description": "在默克诊疗手册中查询疾病。"
+    },
+    "drug-bank": {
+      "title": "加拿大卫生部药物数据库",
+      "description": "查询加拿大卫生部药品数据库。"
+    },
+    "genetic-clinician": {
+      "title": "基因咨询",
+      "description": "AI 辅助解读患者的基因报告。"
+    }
+  },
+  "auth": {
+    "signInTitle": "登录 EAI-Doctor",
+    "signInSubtitle": "一个账户即可使用患者门户和临床门户",
+    "signInToOpen": "登录后打开{{feature}}",
+    "email": "电子邮箱",
+    "emailPlaceholder": "you@example.com",
+    "password": "密码",
+    "passwordPlaceholderLogin": "请输入密码",
+    "forgotPassword": "忘记密码？",
+    "signInButton": "登录",
+    "noAccount": "没有账户？",
+    "createOne": "立即注册",
+    "clinicianNoAccount": "医生还没有账户？",
+    "joinClinic": "机构入驻",
+    "registerTitle": "创建账户",
+    "registerSubtitle": "面向患者，免费注册。",
+    "fullName": "姓名",
+    "namePlaceholder": "张三",
+    "passwordPlaceholderNew": "至少8位，含大写字母和数字",
+    "rules": {
+      "length": "至少8个字符",
+      "uppercase": "至少一个大写字母",
+      "number": "至少一个数字"
+    },
+    "agreement": "创建账户即表示您同意使用条款，并了解您的信息将按照我们的",
+    "privacyPolicy": "隐私政策",
+    "createAccountButton": "创建账户",
+    "haveAccount": "已有账户？",
+    "signInLink": "登录",
+    "verifyTitle": "验证邮箱",
+    "sentCode": "我们已向以下邮箱发送了6位验证码",
+    "codeLabel": "验证码",
+    "codeExpires": "验证码10分钟内有效。",
+    "verify": "验证",
+    "backToSignIn": "返回登录",
+    "resend": "重新发送验证码",
+    "resendIn": "{{seconds}}秒后重新发送",
+    "newCodeSent": "新的验证码已发送。",
+    "verificationFailed": "验证失败，请检查验证码后重试。",
+    "failedResend": "重新发送失败。",
+    "forgotTitle": "忘记密码？",
+    "forgotDesc": "输入您的电子邮件，我们将向您发送重置链接。",
+    "sendResetLink": "发送重置链接",
+    "checkEmailTitle": "请检查您的邮箱",
+    "resetLinkSent": "我们已向以下地址发送重置链接",
+    "checkSpam": "没有看到？请检查垃圾邮箱。",
+    "forgotFailed": "发送重置邮件失败。请再试一次。",
+    "alreadySignedIn": "您已登录",
+    "signInAsSomeoneElse": "切换账户"
+  },
+  "errors": {
+    "MISSING_REQUIRED_FIELDS": "电子邮件、密码和姓名为必填项",
+    "INVALID_ROLE": "选择的角色无效",
+    "WEAK_PASSWORD": "密码过于简单",
+    "NAME_REQUIRED": "姓名为必填项",
+    "PASSWORD_TOO_SHORT": "密码必须至少包含8个字符",
+    "PASSWORD_NO_UPPERCASE": "密码必须包含至少一个大写字母",
+    "PASSWORD_NO_NUMBER": "密码必须包含至少一个数字",
+    "PASSWORD_INVALID": "请检查密码要求",
+    "UNKNOWN": "发生错误",
+    "incorrect": "邮箱或密码不正确。",
+    "tooMany": "尝试次数过多，请稍等一分钟再试。",
+    "network": "无法连接登录服务，请检查网络后重试。",
+    "server": "登录服务出现问题，请稍后再试。",
+    "generic": "出了点问题，请重试。"
+  }
+}

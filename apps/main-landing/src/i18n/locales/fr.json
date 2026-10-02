@@ -1,0 +1,189 @@
+{
+  "header": {
+    "forClinics": "Pour les cliniques",
+    "signIn": "Se connecter",
+    "createAccount": "Créer un compte",
+    "accountMenu": "Menu du compte",
+    "open": "Ouvrir le {{portal}}",
+    "signOut": "Se déconnecter",
+    "language": "Langue"
+  },
+  "portals": {
+    "patient": "portail patient",
+    "clinic": "portail clinique"
+  },
+  "portalTitles": {
+    "patient": "Portail patient",
+    "clinic": "Portail clinique"
+  },
+  "roles": {
+    "patient": "patient",
+    "clinician": "clinicien",
+    "admin": "administrateur"
+  },
+  "landing": {
+    "heroTitle": "Des soins propulsés par l’IA, à votre façon",
+    "heroSubtitle": "Utilisez le portail patient ou clinique complet, ou ouvrez un seul outil d’IA.",
+    "welcomeBack": "Bon retour",
+    "welcomeBackName": "Bon retour, {{name}}",
+    "signedInSubtitle": "Reprenez là où vous en étiez dans le {{portal}}, ou ouvrez un outil d’IA ci-dessous.",
+    "patientPortal": {
+      "description": "Votre dossier de santé et votre assistant santé IA.",
+      "points": [
+        "Consultation santé IA et auto-triage",
+        "Votre profil médical au même endroit",
+        "Analyse de rapports et génétique"
+      ],
+      "primary": "Se connecter",
+      "secondary": "Créer un compte"
+    },
+    "clinicPortal": {
+      "description": "L’espace de travail clinique avec l’IA intégrée.",
+      "points": [
+        "Dossiers patients et consultation assistée par l’IA",
+        "Transcription, IA d’imagerie, recherche de médicaments et de littérature",
+        "Intégration des nouvelles cliniques"
+      ],
+      "primary": "Connexion clinicien",
+      "secondary": "Inscrire une clinique"
+    },
+    "toolsTitle": "Outils d’IA",
+    "toolsSubtitle": "Ouvrez un outil directement. Les outils marqués « Connexion » nécessitent un compte.",
+    "forPatients": "Pour les patients",
+    "forClinicians": "Pour les cliniciens",
+    "badgeSignIn": "Connexion",
+    "badgeNewTab": "Nouvel onglet",
+    "wrongRole": "Cet outil est destiné aux {{audience}}. Vous êtes connecté en tant que {{role}}.",
+    "audiencePatients": "patients",
+    "audienceClinicians": "cliniciens",
+    "goToPortal": "Aller au {{portal}}"
+  },
+  "features": {
+    "health-consultation": {
+      "title": "Consultation santé",
+      "description": "Parlez au médecin IA de vos symptômes et de vos rapports médicaux."
+    },
+    "self-triage": {
+      "title": "Auto-triage",
+      "description": "Évaluation des symptômes par l’IA pour savoir à quel point vos soins sont urgents."
+    },
+    "medical-profile": {
+      "title": "Mon profil médical",
+      "description": "Vos symptômes, médicaments, signes vitaux et antécédents au même endroit."
+    },
+    "report-analysis": {
+      "title": "Analyse de rapports médicaux",
+      "description": "Téléversez un rapport et obtenez une explication en langage simple."
+    },
+    "genetic": {
+      "title": "Aide à la consultation génétique",
+      "description": "Discutez de votre rapport génétique avec un assistant IA."
+    },
+    "nutrition": {
+      "title": "Consultation nutrition",
+      "description": "Conseils nutritionnels personnalisés et planification des repas."
+    },
+    "patients": {
+      "title": "Aide à la consultation médicale",
+      "description": "Ouvrez le dossier d’un patient et consultez avec l’aide de l’IA."
+    },
+    "transcribe": {
+      "title": "Transcrire et dicter",
+      "description": "Transformez l’enregistrement d’une consultation en notes cliniques structurées."
+    },
+    "ask-ebo-ai": {
+      "title": "Demander à EboAI",
+      "description": "Réponses fondées sur les données probantes aux questions cliniques."
+    },
+    "skin-cancer": {
+      "title": "Détection du cancer de la peau",
+      "description": "Dépistage des lésions cutanées à partir d’images."
+    },
+    "retinal": {
+      "title": "Détection des maladies rétiniennes",
+      "description": "Analyse d’images du fond d’œil pour les maladies rétiniennes."
+    },
+    "pubmed": {
+      "title": "Recherche PubMed",
+      "description": "Recherchez la littérature médicale avec des résumés IA."
+    },
+    "merck": {
+      "title": "Manuel Merck",
+      "description": "Consultez les affections dans le Manuel Merck."
+    },
+    "drug-bank": {
+      "title": "Banque de médicaments Santé Canada",
+      "description": "Recherche dans la base de données des produits pharmaceutiques de Santé Canada."
+    },
+    "genetic-clinician": {
+      "title": "Consultation génétique",
+      "description": "Aide de l’IA pour examiner le rapport génétique d’un patient."
+    }
+  },
+  "auth": {
+    "signInTitle": "Se connecter à EAI-Doctor",
+    "signInSubtitle": "Un seul compte pour les portails patient et clinique",
+    "signInToOpen": "Connectez-vous pour ouvrir {{feature}}",
+    "email": "Courriel",
+    "emailPlaceholder": "vous@exemple.com",
+    "password": "Mot de passe",
+    "passwordPlaceholderLogin": "Entrez votre mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "signInButton": "Se connecter",
+    "noAccount": "Pas de compte ?",
+    "createOne": "Créer un compte",
+    "clinicianNoAccount": "Clinicien sans compte ?",
+    "joinClinic": "Inscrire une clinique",
+    "registerTitle": "Créer votre compte",
+    "registerSubtitle": "Pour les patients. Gratuit pour commencer.",
+    "fullName": "Nom complet",
+    "namePlaceholder": "Jean Dupont",
+    "passwordPlaceholderNew": "Min. 8 car., 1 majuscule, 1 chiffre",
+    "rules": {
+      "length": "Au moins 8 caractères",
+      "uppercase": "Au moins une lettre majuscule",
+      "number": "Au moins un chiffre"
+    },
+    "agreement": "En créant un compte, vous acceptez les Conditions d’utilisation et comprenez que vos informations seront utilisées comme décrit dans notre",
+    "privacyPolicy": "Politique de confidentialité",
+    "createAccountButton": "Créer un compte",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "signInLink": "Se connecter",
+    "verifyTitle": "Vérifier votre courriel",
+    "sentCode": "Nous avons envoyé un code à 6 chiffres à",
+    "codeLabel": "Code de vérification",
+    "codeExpires": "Le code expire dans 10 minutes.",
+    "verify": "Vérifier",
+    "backToSignIn": "Retour à la connexion",
+    "resend": "Renvoyer le code",
+    "resendIn": "Renvoyer dans {{seconds}}s",
+    "newCodeSent": "Un nouveau code est en route.",
+    "verificationFailed": "La vérification a échoué. Vérifiez le code et réessayez.",
+    "failedResend": "Échec du renvoi du code.",
+    "forgotTitle": "Mot de passe oublié ?",
+    "forgotDesc": "Entrez votre e-mail et nous vous enverrons un lien de réinitialisation.",
+    "sendResetLink": "Envoyer le lien de réinitialisation",
+    "checkEmailTitle": "Vérifiez votre e-mail",
+    "resetLinkSent": "Nous avons envoyé un lien de réinitialisation à",
+    "checkSpam": "Vous ne le voyez pas ? Vérifiez votre dossier spam.",
+    "forgotFailed": "Échec de l’envoi de l’e-mail de réinitialisation. Veuillez réessayer.",
+    "alreadySignedIn": "Vous êtes déjà connecté",
+    "signInAsSomeoneElse": "Se connecter avec un autre compte"
+  },
+  "errors": {
+    "MISSING_REQUIRED_FIELDS": "L’e-mail, le mot de passe et le nom sont requis",
+    "INVALID_ROLE": "Rôle sélectionné invalide",
+    "WEAK_PASSWORD": "Le mot de passe est trop faible",
+    "NAME_REQUIRED": "Le nom est requis",
+    "PASSWORD_TOO_SHORT": "Le mot de passe doit contenir au moins 8 caractères",
+    "PASSWORD_NO_UPPERCASE": "Le mot de passe doit contenir au moins une lettre majuscule",
+    "PASSWORD_NO_NUMBER": "Le mot de passe doit contenir au moins un chiffre",
+    "PASSWORD_INVALID": "Veuillez vérifier les exigences du mot de passe",
+    "UNKNOWN": "Une erreur s’est produite",
+    "incorrect": "Courriel ou mot de passe incorrect.",
+    "tooMany": "Trop de tentatives. Attendez une minute et réessayez.",
+    "network": "Impossible de joindre le service de connexion. Vérifiez votre connexion et réessayez.",
+    "server": "Le service de connexion a rencontré un problème. Réessayez dans un instant.",
+    "generic": "Une erreur s’est produite. Veuillez réessayer."
+  }
+}

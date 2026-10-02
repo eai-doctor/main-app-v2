@@ -1,0 +1,189 @@
+{
+  "header": {
+    "forClinics": "For clinics",
+    "signIn": "Sign in",
+    "createAccount": "Create account",
+    "accountMenu": "Account menu",
+    "open": "Open {{portal}}",
+    "signOut": "Sign out",
+    "language": "Language"
+  },
+  "portals": {
+    "patient": "Patient Portal",
+    "clinic": "Clinic Portal"
+  },
+  "portalTitles": {
+    "patient": "Patient Portal",
+    "clinic": "Clinic Portal"
+  },
+  "roles": {
+    "patient": "patient",
+    "clinician": "clinician",
+    "admin": "admin"
+  },
+  "landing": {
+    "heroTitle": "AI-powered care, your way",
+    "heroSubtitle": "Use the full patient or clinic portal, or open a single AI tool on its own.",
+    "welcomeBack": "Welcome back",
+    "welcomeBackName": "Welcome back, {{name}}",
+    "signedInSubtitle": "Pick up where you left off in the {{portal}}, or open any AI tool below.",
+    "patientPortal": {
+      "description": "Your health record and AI health assistant.",
+      "points": [
+        "AI health consultation & self-triage",
+        "Your medical profile in one place",
+        "Report & genetic analysis"
+      ],
+      "primary": "Sign in",
+      "secondary": "Create account"
+    },
+    "clinicPortal": {
+      "description": "The clinician workspace with AI built in.",
+      "points": [
+        "Patient records & AI-assisted consultation",
+        "Transcription, imaging AI, drug & literature search",
+        "Clinic onboarding for new practices"
+      ],
+      "primary": "Clinician sign in",
+      "secondary": "Join as a clinic"
+    },
+    "toolsTitle": "AI tools",
+    "toolsSubtitle": "Open one tool directly. Tools marked “Sign in” need an account.",
+    "forPatients": "For patients",
+    "forClinicians": "For clinicians",
+    "badgeSignIn": "Sign in",
+    "badgeNewTab": "Opens in new tab",
+    "wrongRole": "This tool is for {{audience}}. You're signed in as a {{role}}.",
+    "audiencePatients": "patients",
+    "audienceClinicians": "clinicians",
+    "goToPortal": "Go to the {{portal}}"
+  },
+  "features": {
+    "health-consultation": {
+      "title": "Health Consultation",
+      "description": "Talk to the AI doctor about your symptoms and medical reports."
+    },
+    "self-triage": {
+      "title": "Self-Triage",
+      "description": "AI-powered symptom assessment to decide how urgently you need care."
+    },
+    "medical-profile": {
+      "title": "My Medical Profile",
+      "description": "Keep your symptoms, medications, vitals and history in one place."
+    },
+    "report-analysis": {
+      "title": "Medical Report Analysis",
+      "description": "Upload a report and get a plain-language explanation."
+    },
+    "genetic": {
+      "title": "Genetic Report Consultation",
+      "description": "Chat with an AI aide about your genetic test report."
+    },
+    "nutrition": {
+      "title": "Nutrition Consultation",
+      "description": "Personalised nutrition advice and meal planning."
+    },
+    "patients": {
+      "title": "Patient Consultation",
+      "description": "Open a patient's record and consult with AI support."
+    },
+    "transcribe": {
+      "title": "Transcribe & Dictate",
+      "description": "Turn a consultation recording into structured clinical notes."
+    },
+    "ask-ebo-ai": {
+      "title": "Ask EboAI",
+      "description": "Evidence-based answers to clinical questions."
+    },
+    "skin-cancer": {
+      "title": "Skin Cancer Detection",
+      "description": "Image-based screening of skin lesions."
+    },
+    "retinal": {
+      "title": "Retinal Disease Detection",
+      "description": "Fundus image analysis for retinal disease."
+    },
+    "pubmed": {
+      "title": "PubMed Literature Search",
+      "description": "Search the medical literature with AI summaries."
+    },
+    "merck": {
+      "title": "Merck Manual",
+      "description": "Look up conditions in the Merck Manual."
+    },
+    "drug-bank": {
+      "title": "Health Canada Drug Bank",
+      "description": "Health Canada drug product database lookup."
+    },
+    "genetic-clinician": {
+      "title": "Genetic Consultation",
+      "description": "AI support for reviewing a patient's genetic report."
+    }
+  },
+  "auth": {
+    "signInTitle": "Sign in to EAI-Doctor",
+    "signInSubtitle": "One account for the patient and clinic portals",
+    "signInToOpen": "Sign in to open {{feature}}",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "password": "Password",
+    "passwordPlaceholderLogin": "Enter your password",
+    "forgotPassword": "Forgot password?",
+    "signInButton": "Sign in",
+    "noAccount": "Don't have an account?",
+    "createOne": "Create one",
+    "clinicianNoAccount": "Clinician without an account?",
+    "joinClinic": "Join as a clinic",
+    "registerTitle": "Create your account",
+    "registerSubtitle": "For patients. Free to get started.",
+    "fullName": "Full name",
+    "namePlaceholder": "Jane Smith",
+    "passwordPlaceholderNew": "Min 8 chars, 1 uppercase, 1 number",
+    "rules": {
+      "length": "At least 8 characters",
+      "uppercase": "At least one uppercase letter",
+      "number": "At least one number"
+    },
+    "agreement": "By creating an account you agree to the Terms of Use and understand that your information will be used as described in our",
+    "privacyPolicy": "Privacy Policy",
+    "createAccountButton": "Create account",
+    "haveAccount": "Already have an account?",
+    "signInLink": "Sign in",
+    "verifyTitle": "Verify your email",
+    "sentCode": "We sent a 6-digit code to",
+    "codeLabel": "Verification code",
+    "codeExpires": "The code expires in 10 minutes.",
+    "verify": "Verify",
+    "backToSignIn": "Back to sign in",
+    "resend": "Resend code",
+    "resendIn": "Resend in {{seconds}}s",
+    "newCodeSent": "A new code is on its way.",
+    "verificationFailed": "Verification failed. Please check the code and try again.",
+    "failedResend": "Failed to resend code.",
+    "forgotTitle": "Forgot password?",
+    "forgotDesc": "Enter your email and we'll send you a reset link.",
+    "sendResetLink": "Send reset link",
+    "checkEmailTitle": "Check your email",
+    "resetLinkSent": "We've sent a reset link to",
+    "checkSpam": "Don't see it? Check your spam folder.",
+    "forgotFailed": "Failed to send reset email. Please try again.",
+    "alreadySignedIn": "You're already signed in",
+    "signInAsSomeoneElse": "Sign in as someone else"
+  },
+  "errors": {
+    "MISSING_REQUIRED_FIELDS": "Email, password, and name are required",
+    "INVALID_ROLE": "Invalid role selected",
+    "WEAK_PASSWORD": "Password is too weak",
+    "NAME_REQUIRED": "Name is required",
+    "PASSWORD_TOO_SHORT": "Password must be at least 8 characters long",
+    "PASSWORD_NO_UPPERCASE": "Password must contain at least one uppercase letter",
+    "PASSWORD_NO_NUMBER": "Password must contain at least one number",
+    "PASSWORD_INVALID": "Please check password requirements",
+    "UNKNOWN": "An error occurred",
+    "incorrect": "Incorrect email or password.",
+    "tooMany": "Too many attempts. Please wait a minute and try again.",
+    "network": "Cannot reach the sign-in service. Check your connection and try again.",
+    "server": "The sign-in service had a problem. Please try again in a moment.",
+    "generic": "Something went wrong. Please try again."
+  }
+}
