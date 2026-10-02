@@ -4,7 +4,7 @@ import { Outlet, useLocation  } from "react-router-dom";
 import { useAuth } from '@/context/AuthContext';
 import { useLanguage, useSessionGuard } from "@/hooks";
 
-import AppFooter from './AppFooter';
+import AppFooter from '@common/app/AppFooter';
 import { AuthModalProvider, useAuthModal } from "@/context/AuthModalContext";
 import { LoginModal } from "@/pages/public";
 import medicalRecordApi from "@/api/medicalRecordApi";

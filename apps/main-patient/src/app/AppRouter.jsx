@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import AppLayout from "./AppLayout"
 
 import { patientRoutes } from "@/app/routes.patient";
-import { publicRoutes } from "@common/public/routes.public.jsx";
+import { publicRoutes } from "@common/routes.public.jsx";
 
 export default function AppRouter() {
   return (
