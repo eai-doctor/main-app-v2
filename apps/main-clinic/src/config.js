@@ -30,6 +30,9 @@ const config = {
   nutritionConsultationUrl : getBase("http://localhost:4200", import.meta.env.VITE_NUTRITION_CONSULT, "http://localhost:4200"),
 
   patientPortalUrl: import.meta.env.VITE_PATIENT_PORTAL_URL || "http://localhost:5171",
+
+  // EAI landing page (apps/main-landing). Logout returns there. Empty in production until VITE_LANDING_URL is set.
+  landingUrl: import.meta.env.VITE_LANDING_URL || (import.meta.env.DEV ? "http://localhost:5180" : ""),
 };
 
 export default config;

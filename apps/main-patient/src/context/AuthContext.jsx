@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import config from "@/config";
+import i18n from "@/i18n";
 import { authLogin, authMe, authLogout, authRefresh, authRegister,authVerifyEmail, authResendVerification, authForgotPassword, authAdminLogin } from "@/api/authApi";
 import { setStoredToken, getStoredToken, clearStoredToken } from "@/api/axiosBase";
 
@@ -133,6 +134,11 @@ const adminLogin = useCallback(async (email, password) => {
     clearStoredToken();
 
     
+    // Back to the EAI landing page when it is configured; otherwise the previous behaviour.
+    if (config.landingUrl) {
+      window.location.replace(`${config.landingUrl}/?lng=${(i18n.language || "en").slice(0, 2)}`);
+      return;
+    }
     window.location.replace(
       role === "clinician" ? config.clinicPortalUrl + "/?mode=scrolling" : "/"
     );
