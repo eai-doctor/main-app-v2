@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Card, CardHeader } from './components/card';
 import { Button, StatusBanner } from '@/components/ui';
 import { authUpdateProfile } from '@/api/authApi';
+import config from '@/config';
+import { medplumUpdateName } from '@/api/medplumAuth';
+import { useAuth } from '@/context/AuthContext';
 
 const inputCls =
   'w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2C3B8D] focus:border-transparent';
@@ -10,12 +13,18 @@ export default function Profile({ user, t }) {
   const [name, setName] = useState(user?.name || '');
   const [status, setStatus] = useState(null);
   const [saving, setSaving] = useState(false);
+  const { setUser } = useAuth();
 
   const save = async () => {
     if (!name.trim()) return;
     setSaving(true); setStatus(null);
     try {
-      await authUpdateProfile({ name: name.trim() });
+      if (config.authProvider === 'medplum') {
+        const updated = await medplumUpdateName(name.trim());
+        if (updated) setUser((u) => ({ ...u, name: updated.name }));
+      } else {
+        await authUpdateProfile({ name: name.trim() });
+      }
       setStatus({ type: 'success', message: t('account:profile.saved') });
     } catch {
       setStatus({ type: 'error', message: t('account:profile.error') });

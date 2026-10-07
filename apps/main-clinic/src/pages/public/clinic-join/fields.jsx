@@ -1,8 +1,9 @@
-import { useState } from "react"; // useNavigate가 필요하다면 추가하세요
+import { useEffect, useState } from "react"; // useNavigate가 필요하다면 추가하세요
 import { useTranslation } from 'react-i18next';
 import { Lock, User, Eye, EyeOff } from "lucide-react"; // Eye, EyeOff 추가
 
 import { useAuth } from '@/context/AuthContext';
+import config from '@/config';
 import { Button, Input, Label } from "@/components/ui";
 
 function Fields() {
@@ -14,6 +15,12 @@ function Fields() {
   const [error, setError] = useState("");
   
   const [showPassword, setShowPassword] = useState(false);
+
+  // Medplum login (VITE_AUTH_PROVIDER=medplum): Medplum's official sign-in page (/signin) replaces this form.
+  const medplumSignIn = config.authProvider === "medplum";
+  useEffect(() => {
+    if (medplumSignIn) window.location.assign("/signin");
+  }, [medplumSignIn]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,6 +38,8 @@ function Fields() {
       setSubmitting(false);
     }
   };
+
+  if (medplumSignIn) return null;
 
   return (
     <>

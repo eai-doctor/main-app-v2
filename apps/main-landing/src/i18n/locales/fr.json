@@ -132,6 +132,8 @@
     "signInButton": "Se connecter",
     "noAccount": "Pas de compte ?",
     "createOne": "Créer un compte",
+    "clinicianSignIn": "Clinicien ?",
+    "clinicianSignInLink": "Se connecter au portail clinique",
     "clinicianNoAccount": "Clinicien sans compte ?",
     "joinClinic": "Inscrire une clinique",
     "registerTitle": "Créer votre compte",

@@ -6,4 +6,5 @@ interface ImportMetaEnv {
   readonly EAI_PATIENT_PORTAL_URL?: string;
   readonly EAI_GENETIC_URL?: string;
   readonly EAI_NUTRITION_URL?: string;
+  readonly EAI_CLINIC_AUTH?: string;
 }

@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Lock, User, Eye, EyeOff } from "lucide-react";
 import { Button, Input, Label } from "@/components/ui";
 import { useAuth } from "@/context/AuthContext";
+import config from "@/config";
 
 export default function AdminLoginFields() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -9,6 +10,12 @@ export default function AdminLoginFields() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const { adminLogin } = useAuth();
+
+  // Medplum login (VITE_AUTH_PROVIDER=medplum): Medplum's official sign-in page, admin mode (project admins only).
+  const medplumSignIn = config.authProvider === "medplum";
+  useEffect(() => {
+    if (medplumSignIn) window.location.assign("/signin?admin=1");
+  }, [medplumSignIn]);
 
   const handleSubmit = async (e) => {
     console.log("handleSubmit")
@@ -37,6 +44,8 @@ export default function AdminLoginFields() {
       setSubmitting(false);
     }
   };
+
+  if (medplumSignIn) return null;
 
   return (
     <>

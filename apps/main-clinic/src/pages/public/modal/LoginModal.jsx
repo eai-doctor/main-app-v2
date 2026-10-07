@@ -5,6 +5,7 @@ import { useAuthModal } from "@/context/AuthModalContext";
 import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 import { Input } from "@/components/ui";
+import config from "@/config";
 
 const validatePassword = (pw) => ({
   length:    pw.length >= 8,
@@ -69,6 +70,13 @@ const isPasswordValid = Object.values(passwordRules).every(Boolean);
     }, 1000);
     return () => clearInterval(cooldownRef.current);
   }, [cooldown]);
+
+  // Medplum login (VITE_AUTH_PROVIDER=medplum): signing in goes to Medplum's official sign-in page (/signin).
+  // Patient sign-up (step "register") still uses this modal.
+  const medplumSignIn = config.authProvider === "medplum" && step === "login";
+  useEffect(() => {
+    if (medplumSignIn) window.location.assign("/signin");
+  }, [medplumSignIn]);
 
   const normalizeEmail = (email) => email.trim().toLowerCase();
 
@@ -188,6 +196,8 @@ const isPasswordValid = Object.values(passwordRules).every(Boolean);
     forgotPassword: t("auth:forgotPassword"),
     forgotPasswordSent: t("auth:checkYourEmail"),
   }[step] ?? t("signIn");
+
+  if (medplumSignIn) return null;
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">

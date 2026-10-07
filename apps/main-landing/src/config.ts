@@ -19,4 +19,6 @@ export const config = {
   geneticConsultationUrl: url(import.meta.env.EAI_GENETIC_URL, 'http://localhost:4200'),
   /** Nutrition consultation app */
   nutritionConsultationUrl: url(import.meta.env.EAI_NUTRITION_URL, 'http://localhost:5174'),
+  /** "medplum": clinicians sign in on main-clinic's Medplum sign-in page instead of here. */
+  clinicSignInWithMedplum: import.meta.env.EAI_CLINIC_AUTH === 'medplum',
 };

@@ -1,6 +1,9 @@
 import axios from "axios";
+import config from "@/config";
+import { getMedplumToken } from "./medplumAuth";
 
 let accessToken = null;
+const USE_MEDPLUM = config.authProvider === "medplum";
 
 export const setStoredToken = (token) => {
   accessToken = token;
@@ -24,7 +27,11 @@ const createApi = (baseURL) => {
   });
 
   instance.interceptors.request.use(
-    (config) => {
+    async (config) => {
+      // Medplum login: always send the SDK's current token (it refreshes itself before expiry).
+      if (USE_MEDPLUM) {
+        accessToken = (await getMedplumToken()) ?? accessToken;
+      }
       if (accessToken) {
         config.headers.Authorization = `Bearer ${accessToken}`;
       }

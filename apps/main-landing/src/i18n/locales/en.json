@@ -132,6 +132,8 @@
     "signInButton": "Sign in",
     "noAccount": "Don't have an account?",
     "createOne": "Create one",
+    "clinicianSignIn": "Clinician?",
+    "clinicianSignInLink": "Sign in to the Clinic Portal",
     "clinicianNoAccount": "Clinician without an account?",
     "joinClinic": "Join as a clinic",
     "registerTitle": "Create your account",

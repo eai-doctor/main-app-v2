@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Card, CardHeader } from './components/card';
 import { Button ,StatusBanner } from '@/components/ui';
 import { authUpdateProfile } from '@/api/authApi';
+import config from '@/config';
+import { medplumChangePassword } from '@/api/medplumAuth';
 
 function PasswordSection({ changePassword, t, inputCls  }) {
   const [pw, setPw] = useState({ current: '', next: '', confirm: '' });
@@ -21,7 +23,8 @@ function PasswordSection({ changePassword, t, inputCls  }) {
     if (!canSubmit) return;
     setBusy(true); setStatus(null);
     try {
-      await authUpdateProfile({ currentPassword: pw.current, newPassword: pw.next });
+      if (config.authProvider === 'medplum') await medplumChangePassword(pw.current, pw.next);
+      else await authUpdateProfile({ currentPassword: pw.current, newPassword: pw.next });
       setStatus({ type: 'success', message: t('account:password.changed', 'Password changed successfully.') });
       setPw({ current: '', next: '', confirm: '' });
     } catch (err) {

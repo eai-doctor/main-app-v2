@@ -14,6 +14,9 @@ import {
   authAdminLogin 
 } from "@/api/authApi";
 import { setStoredToken, getStoredToken, clearStoredToken } from "@/api/axiosBase";
+import { MEDPLUM_SIGNED_OUT, medplumLogout, medplumRestore } from "@/api/medplumAuth";
+
+const USE_MEDPLUM = config.authProvider === "medplum";
 
 const AuthContext = createContext(null);
 
@@ -38,6 +41,16 @@ export function AuthProvider({ children }) {
     let isMounted = true;
 
     const initializeAuth = async () => {
+      if (USE_MEDPLUM) {
+        const session = await medplumRestore();
+        if (isMounted) {
+          setUser(session?.user ?? null);
+          setAccessToken(session?.accessToken ?? null);
+          setStoredToken(session?.accessToken ?? null);
+          setLoading(false);
+        }
+        return;
+      }
       try {
         const refreshRes = await authRefresh({ withCredentials: true });
         const newAccessToken = refreshRes.data.access_token;
@@ -71,6 +84,11 @@ export function AuthProvider({ children }) {
 
   // saebyeok - cookie reflected
 const login = useCallback(async (email, password) => {
+  if (USE_MEDPLUM) {
+    // Medplum login happens on Medplum's official sign-in page.
+    window.location.assign("/signin");
+    return null;
+  }
   try {
     const res = await authLogin({ email, password });
     const { user: userData, access_token: tokenData } = res.data;
@@ -98,6 +116,11 @@ const login = useCallback(async (email, password) => {
 }, []);
 
 const adminLogin = useCallback(async (email, password) => {
+  if (USE_MEDPLUM) {
+    // Medplum admin login: Medplum's sign-in page, admin mode (checks ProjectMembership.admin).
+    window.location.assign("/signin?admin=1");
+    return null;
+  }
   try {
     setLoading(true);
     const res = await authAdminLogin({ email, password });
@@ -133,7 +156,8 @@ const adminLogin = useCallback(async (email, password) => {
     const role = user?.role;
 
     try {
-      await authLogout();
+      if (USE_MEDPLUM) await medplumLogout();
+      else await authLogout();
     } catch (err) {
       console.error("Logout notification failed", err);
     }
@@ -209,6 +233,18 @@ const adminLogin = useCallback(async (email, password) => {
       email,
     });
     return res.data;
+  }, []);
+
+  // Medplum login: the SDK could not refresh the session → treat as signed out.
+  useEffect(() => {
+    if (!USE_MEDPLUM) return undefined;
+    const onSignedOut = () => {
+      setUser(null);
+      setAccessToken(null);
+      clearStoredToken();
+    };
+    window.addEventListener(MEDPLUM_SIGNED_OUT, onSignedOut);
+    return () => window.removeEventListener(MEDPLUM_SIGNED_OUT, onSignedOut);
   }, []);
 
   // Set up axios response interceptor for 401s

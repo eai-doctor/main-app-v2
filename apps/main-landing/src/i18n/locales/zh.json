@@ -132,6 +132,8 @@
     "signInButton": "登录",
     "noAccount": "没有账户？",
     "createOne": "立即注册",
+    "clinicianSignIn": "医生？",
+    "clinicianSignInLink": "登录诊所端",
     "clinicianNoAccount": "医生还没有账户？",
     "joinClinic": "机构入驻",
     "registerTitle": "创建账户",

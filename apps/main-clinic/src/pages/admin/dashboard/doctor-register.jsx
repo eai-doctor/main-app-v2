@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { User, Lock, Eye, EyeOff, Stethoscope, Phone, Building2, ChevronDown, CheckCircle2, AlertCircle } from "lucide-react";
 import { authDoctorRegister } from "@/api/authApi";
+import config from "@/config";
+import { medplumRegisterDoctor } from "@/api/medplumAuth";
 
 const SPECIALTIES = [
   "Cardiology", "Dermatology", "Emergency Medicine", "Endocrinology",
@@ -152,6 +154,14 @@ export default function AdminDoctorRegister({ onSuccess }) {
     setSubmitting(true);
 
     try {
+      if (config.authProvider === "medplum") {
+        // Creates the Practitioner and user in the Medplum project.
+        const doc = await medplumRegisterDoctor(form);
+        setResult({ type: "success", message: `${doc.name} has been registered successfully.` });
+        setForm({ name: "", email: "", password: "", specialty: "", phone: "", clinic_name: "" });
+        onSuccess?.(doc);
+        return;
+      }
       const res = await authDoctorRegister(form);
       
       if (!res.ok) {
@@ -163,8 +173,11 @@ export default function AdminDoctorRegister({ onSuccess }) {
       setForm({ name: "", email: "", password: "", specialty: "", phone: "", clinic_name: "" });
       onSuccess?.(data);
 
-    } catch {
-      setResult({ type: "error", message: "Network error. Please try again." });
+    } catch (err) {
+      setResult({
+        type: "error",
+        message: config.authProvider === "medplum" ? err?.message || "Registration failed." : "Network error. Please try again.",
+      });
     } finally {
       setSubmitting(false);
     }

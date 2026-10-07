@@ -169,6 +169,23 @@ export function portalKey(user: EaiUser): 'patient' | 'clinic' {
   return user.role === 'patient' ? 'patient' : 'clinic';
 }
 
+/**
+ * main-clinic's Medplum sign-in page (when config.clinicSignInWithMedplum).
+ * `next` is the main-clinic path to open after signing in, e.g. a clinician tool.
+ */
+export function clinicMedplumSignInUrl(next?: string): string {
+  const url = new URL(`${config.clinicPortalUrl}/signin`);
+  if (next) {
+    url.searchParams.set('next', next);
+  }
+  return url.toString();
+}
+
+/** Clinician features sign in on main-clinic (Medplum) instead of on the landing page. */
+export function signsInOnClinic(feature: Feature | undefined): boolean {
+  return config.clinicSignInWithMedplum && !!feature && 'app' in feature.target && feature.target.app === 'clinic';
+}
+
 /** The clinic onboarding page in main-clinic. */
 export function clinicJoinUrl(): string {
   return withLang(`${config.clinicPortalUrl}/clinic-join`);

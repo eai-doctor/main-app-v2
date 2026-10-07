@@ -33,6 +33,12 @@ const config = {
 
   // EAI landing page (apps/main-landing). Logout returns there. Empty in production until VITE_LANDING_URL is set.
   landingUrl: import.meta.env.VITE_LANDING_URL || (import.meta.env.DEV ? "http://localhost:5180" : ""),
+
+  // Sign-in: "auth-service" (current MongoDB login) or "medplum" (src/api/medplumAuth.js).
+  authProvider: import.meta.env.VITE_AUTH_PROVIDER || "auth-service",
+  medplumBaseUrl: import.meta.env.VITE_MEDPLUM_BASE_URL || "https://api.medplum.com/",
+  medplumClientId: import.meta.env.VITE_MEDPLUM_CLIENT_ID || "",
+  medplumProjectId: import.meta.env.VITE_MEDPLUM_PROJECT_ID || "",
 };
 
 export default config;

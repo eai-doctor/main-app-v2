@@ -23,7 +23,17 @@ import { useNavigate } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import type { EaiUser } from '../auth/authService';
 import type { Audience, Feature } from '../features';
-import { canLaunch, clinicJoinUrl, FEATURES, launchFeature, portalHomeUrl, portalKey } from '../features';
+import {
+  canLaunch,
+  clinicJoinUrl,
+  clinicMedplumSignInUrl,
+  FEATURES,
+  launchFeature,
+  portalHomeUrl,
+  portalKey,
+  signsInOnClinic,
+} from '../features';
+import { config } from '../config';
 import { SiteHeader } from '../SiteHeader';
 
 export function LandingPage(): JSX.Element {
@@ -45,6 +55,9 @@ export function LandingPage(): JSX.Element {
     const check = canLaunch(feature, user);
     if (check.ok) {
       launchFeature(feature);
+    } else if (check.reason === 'signin' && signsInOnClinic(feature) && 'path' in feature.target) {
+      // Clinician tool + Medplum login: sign in on main-clinic, then open the tool there.
+      window.location.assign(clinicMedplumSignInUrl(feature.target.path));
     } else if (check.reason === 'signin') {
       navigate(`/signin?feature=${feature.id}`);
     } else {
@@ -100,7 +113,13 @@ export function LandingPage(): JSX.Element {
               title={t('portalTitles.clinic')}
               description={t('landing.clinicPortal.description')}
               points={t('landing.clinicPortal.points', { returnObjects: true }) as string[]}
-              primary={{ label: t('landing.clinicPortal.primary'), onClick: () => navigate('/signin') }}
+              primary={{
+                label: t('landing.clinicPortal.primary'),
+                onClick: () =>
+                  config.clinicSignInWithMedplum
+                    ? window.location.assign(clinicMedplumSignInUrl())
+                    : navigate('/signin'),
+              }}
               secondary={{ label: t('landing.clinicPortal.secondary'), href: clinicJoinUrl() }}
             />
           </SimpleGrid>
