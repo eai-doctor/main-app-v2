@@ -18,7 +18,7 @@ const AuthContext = createContext(null);
 
 async function handleMedplumLogin() {
   await medplum.signInWithRedirect({
-    clientId: '3cde7dc8-aa68-4f35-8baa-359d43b28a6a',
+    clientId: '768556d8-bc38-4649-86cb-062ed562b956',
     redirectUri: 'http://dev.clinic.e-ai.ca/auth/callback',
   });
 }
