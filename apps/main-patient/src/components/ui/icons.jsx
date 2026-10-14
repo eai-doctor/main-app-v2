@@ -371,3 +371,63 @@ export function NutritionConsultationIcon({
     </svg>
   );
 }
+
+export function MedplumIcon ({
+  className = "w-12 h-12",
+}) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      {/* Purple background */}
+      <rect
+        width="48"
+        height="48"
+        rx="10"
+        fill="#92278F"
+      />
+
+      {/* White medical symbol */}
+      <path
+        d="M24 19
+           C16.5 14 10 20 12.5 28
+           C14 34 19 39 24 41
+           C29 39 34 34 35.5 28
+           C38 20 31.5 14 24 19Z"
+        fill="white"
+      />
+
+      {/* Medical cross */}
+      <path
+        d="M24 23V34M18.5 28.5H29.5"
+        stroke="#92278F"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+
+      {/* EAI-inspired top symbol */}
+      <path
+        d="M24 19V13"
+        stroke="white"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+
+      <path
+        d="M24 15C20 15 18 12 18 9
+           C22 9 24 11 24 15Z"
+        fill="white"
+      />
+
+      <path
+        d="M24 15C28 15 30 12 30 9
+           C26 9 24 11 24 15Z"
+        fill="white"
+      />
+    </svg>
+  );
+}

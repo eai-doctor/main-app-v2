@@ -41,7 +41,7 @@ function AppLayoutInner() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-1">
+      <main className="flex-1 bg-gradient-to-br from-gray-50 to-blue-50">
         <Outlet />
       </main>
 

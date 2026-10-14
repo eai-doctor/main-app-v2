@@ -371,3 +371,4 @@ export function NutritionConsultationIcon({
     </svg>
   );
 }
+
