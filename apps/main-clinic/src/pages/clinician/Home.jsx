@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { MessageSquare, Dna, ClipboardList, LogIn } from "lucide-react";
 import { FeatureCard, Header, SystemStatus } from "@/components";
-import { UserIcon, StethoscopeIcon, BooksIcon, SettingsIcon } from "@/components/ui/icons";
+import { UserIcon, StethoscopeIcon, BooksIcon, MedplumIcon } from "@/components/ui/icons";
 import config from "@/config";
 
 /* -------------------- Main Page -------------------- */
@@ -40,6 +40,16 @@ export default function Home() {
       color: "from-blue-400 to-blue-600",
       disabled: false
     },
+    ,
+    {
+      id: "medplum-ehr",
+      title: "Medplum EHR",
+      description: "Manage patient records and clinical workflows",
+      icon: <MedplumIcon className="w-8 h-8" />,
+      externalUrl: config.medplumUrl,
+      requiresAuth: false,
+      disabled: false,
+    }
   ];
 
 

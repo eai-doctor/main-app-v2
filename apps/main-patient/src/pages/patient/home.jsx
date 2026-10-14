@@ -97,15 +97,15 @@ function PersonalHome() {
       requiresAuth: false,
       disabled: false,
     },
-    {
-      id: "medplum-ehr",
-      title: "Medplum EHR",
-      description: "Manage patient records and clinical workflows",
-      icon: <MedplumIcon className="w-8 h-8" />,
-      externalUrl: config.medplumUrl,
-      requiresAuth: false,
-      disabled: false,
-    }
+    // {
+    //   id: "medplum-ehr",
+    //   title: "Medplum EHR",
+    //   description: "Manage patient records and clinical workflows",
+    //   icon: <MedplumIcon className="w-8 h-8" />,
+    //   externalUrl: config.medplumUrl,
+    //   requiresAuth: false,
+    //   disabled: false,
+    // }
   ];
 
   return (
