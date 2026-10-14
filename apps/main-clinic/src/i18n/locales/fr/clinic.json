@@ -18,6 +18,10 @@
         "title": "Bibliothèque de fonctions",
         "description": "Accéder à divers outils et fonctionnalités IA"
       },
+      "fhirManagement": {
+        "title": "Gestion FHIR",
+        "description": "Gérez les ressources cliniques FHIR dans l’espace Medplum auto-hébergé"
+      },
       "settings": {
         "title": "Paramètres",
         "description": "Gérer les comptes utilisateurs, les rôles et les paramètres système"

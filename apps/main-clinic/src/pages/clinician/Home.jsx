@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
-import { MessageSquare, Dna, ClipboardList, LogIn } from "lucide-react";
+import { Database } from "lucide-react";
 import { FeatureCard, Header, SystemStatus } from "@/components";
 import { UserIcon, StethoscopeIcon, BooksIcon, SettingsIcon } from "@/components/ui/icons";
 import config from "@/config";
@@ -40,6 +40,16 @@ export default function Home() {
       color: "from-blue-400 to-blue-600",
       disabled: false
     },
+    {
+      id: "fhir-management",
+      title: t('clinic:home.modules.fhirManagement.title'),
+      description: t('clinic:home.modules.fhirManagement.description'),
+      icon: <Database className="w-12 h-12 text-violet-500" />,
+      externalUrl: config.medplumAppUrl,
+      includeAccessToken: false,
+      color: "from-violet-400 to-violet-600",
+      disabled: false
+    },
   ];
 
 
@@ -47,7 +57,7 @@ export default function Home() {
     (module) => {
       if (module.externalUrl) {
         if (isAuthenticated) {
-          const url = accessToken
+          const url = module.includeAccessToken && accessToken
             ? `${module.externalUrl}?token=${encodeURIComponent(accessToken)}`
             : module.externalUrl;
           window.open(url, "_blank", "noopener,noreferrer");

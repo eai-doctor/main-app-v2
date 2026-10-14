@@ -18,6 +18,10 @@
         "title": "功能库",
         "description": "访问各种AI工具和功能"
       },
+      "fhirManagement": {
+        "title": "FHIR 数据管理",
+        "description": "在自托管 Medplum 工作区中管理临床 FHIR 资源"
+      },
       "settings": {
         "title": "设置",
         "description": "管理用户账户、角色和系统设置"

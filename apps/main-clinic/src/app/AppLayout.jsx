@@ -5,7 +5,6 @@ import { useAuth } from '@/context/AuthContext';
 import { useLanguage, useSessionGuard } from "@/hooks";
 
 import AppFooter from './AppFooter';
-import MedplumShortcut from '@/components/MedplumShortcut';
 import { AuthModalProvider, useAuthModal } from "@/context/AuthModalContext";
 import { LoginModal } from "@/pages/public";
 import medicalRecordApi from "@/api/medicalRecordApi";
@@ -47,8 +46,6 @@ function AppLayoutInner() {
       </main>
 
       { !pathname.includes("dashboard") && <AppFooter /> }
-
-      <MedplumShortcut />
 
       {isLoginOpen && (
         <LoginModal

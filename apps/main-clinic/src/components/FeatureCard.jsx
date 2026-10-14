@@ -11,9 +11,20 @@ export default function FeatureCard({ icon, title, description, onClick, disable
     onClick?.();
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleClick();
+    }
+  };
+
   return (
     <div
       onClick={!disabled ? handleClick : undefined}
+      onKeyDown={!disabled ? handleKeyDown : undefined}
+      role="button"
+      tabIndex={disabled ? -1 : 0}
+      aria-disabled={disabled}
       className={`group rounded-2xl p-8 shadow-md transition-all duration-300
         ${
           disabled

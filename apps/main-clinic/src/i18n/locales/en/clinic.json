@@ -18,6 +18,10 @@
         "title": "Function Library",
         "description": "Access various AI tools and features"
       },
+      "fhirManagement": {
+        "title": "FHIR Management",
+        "description": "Manage clinical FHIR resources in the self-hosted Medplum workspace"
+      },
       "settings": {
         "title": "Settings",
         "description": "Manage user accounts, roles, and system settings"
