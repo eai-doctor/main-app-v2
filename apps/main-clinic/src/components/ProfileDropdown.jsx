@@ -34,8 +34,7 @@ function ProfileDropdown({ variant = "light" }) {
   };
 
   // mediplum
-  const initials = user?.name
-    ? user.name : "user";
+  const initials = "U"
   // const initials = user?.name
   //   ? user.name
   //       .split(" ")
