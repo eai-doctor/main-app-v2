@@ -33,14 +33,17 @@ function ProfileDropdown({ variant = "light" }) {
     logout();
   };
 
+  // mediplum
   const initials = user?.name
-    ? user.name
-        .split(" ")
-        .map((w) => w[0])
-        .join("")
-        .toUpperCase()
-        .slice(0, 2)
-    : "U";
+    ? user.name : "user";
+  // const initials = user?.name
+  //   ? user.name
+  //       .split(" ")
+  //       .map((w) => w[0])
+  //       .join("")
+  //       .toUpperCase()
+  //       .slice(0, 2)
+  //   : "U";
 
   const isDark = variant === "dark";
 
