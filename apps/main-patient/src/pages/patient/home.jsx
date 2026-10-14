@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { useAuth } from "@/context/AuthContext";
 import { FeatureCard, Header, SystemStatus } from "@/components";
-import { ChatIcon, DnaIcon, AlertIcon, ClipboardListIcon, NutritionConsultationIcon, DocumentIcon } from "@/components/ui/icons";
+import { ChatIcon, DnaIcon, AlertIcon, ClipboardListIcon, NutritionConsultationIcon, DocumentIcon, MedplumIcon  } from "@/components/ui/icons";
 import { AuthModalProvider, useAuthModal } from "@/context/AuthModalContext";
 import config from "@/config";
 
@@ -96,11 +96,20 @@ function PersonalHome() {
       externalUrl: config.nutritionConsultationUrl,
       requiresAuth: false,
       disabled: false,
+    },
+    {
+      id: "medplum-ehr",
+      title: "Medplum EHR",
+      description: "Manage patient records and clinical workflows",
+      icon: <MedplumIcon className="w-8 h-8" />,
+      externalUrl: config.medplumUrl,
+      requiresAuth: false,
+      disabled: false,
     }
   ];
 
   return (
-    <div className="min-h-96 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div className="min-h-96">
       
       {/* Header */}
       <Header  />

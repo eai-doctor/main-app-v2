@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background: var(--mantine-color-gray-0);
+  min-height: 100vh;
+}
+
+.eai-module-card:hover:not([aria-disabled='true']) {
+  transform: translateY(-3px);
+  box-shadow: var(--mantine-shadow-md);
+}
