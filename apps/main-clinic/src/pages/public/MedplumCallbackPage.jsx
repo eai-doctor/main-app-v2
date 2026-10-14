@@ -39,7 +39,7 @@ export default function MedplumCallbackPage() {
           "/auth/callback"
         );
 
-        //navigate("/", { replace: true });
+        navigate("/", { replace: true });
       } catch (err) {
         console.error("Medplum OAuth callback failed:", err);
         setError(err.message || "Medplum login failed.");
