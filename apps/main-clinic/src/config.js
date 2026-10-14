@@ -36,7 +36,8 @@ const config = {
 
   // Sign-in: "auth-service" (current MongoDB login) or "medplum" (src/api/medplumAuth.js).
   authProvider: import.meta.env.VITE_AUTH_PROVIDER || "auth-service",
-  medplumBaseUrl: import.meta.env.VITE_MEDPLUM_BASE_URL || "https://api.medplum.com/",
+  // Self-hosted EAI Medplum. Override per environment when the deployment moves.
+  medplumBaseUrl: import.meta.env.VITE_MEDPLUM_BASE_URL || "https://api.eai-medplum-staging.tech/",
   medplumClientId: import.meta.env.VITE_MEDPLUM_CLIENT_ID || "",
   medplumProjectId: import.meta.env.VITE_MEDPLUM_PROJECT_ID || "",
 };
