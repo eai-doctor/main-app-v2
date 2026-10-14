@@ -33,7 +33,7 @@ const config = {
   nutritionConsultationUrl : getBase("http://localhost:4200", import.meta.env.VITE_NUTRITION_CONSULT, "http://localhost:4200"),
 
   clinicPortalUrl: import.meta.env.VITE_CLINIC_PORTAL_URL || "http://localhost:5170",
-  medplumUrl: "http://35.215.2.187:3000/",
+  medplumUrl: import.meta.env.VITE_CLINIC_PORTAL_URL ||"http://35.215.2.187:5031/",
 };
 
 export default config;
