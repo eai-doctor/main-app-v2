@@ -6,7 +6,8 @@ import {
     AboutUs,
     HelpCenter,
     LegalPage,
-    DemoRequest
+    DemoRequest,
+    MedplumCallbackPage
 } from '@/pages/public'; 
 
 
@@ -28,4 +29,5 @@ export const publicRoutes = [
   { path: "/about-us", element: <AboutUs  /> },
   { path: "/help-center", element: <HelpCenter /> },
   { path: "/legal", element: <LegalPage /> },
+  { path: "/auth/callback", element: <MedplumCallbackPage  /> },
 ];

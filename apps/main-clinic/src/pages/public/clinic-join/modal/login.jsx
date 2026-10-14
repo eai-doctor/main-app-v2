@@ -9,6 +9,7 @@ function LoginModal({ open, onClose }) {
       style={{ background: "rgba(10,18,40,0.72)", backdropFilter: "blur(8px)" }}
       onClick={onClose}
     >
+      
       <div
         className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden"
         style={{ animation: "modalIn 0.28s cubic-bezier(.22,1,.36,1) both" }}

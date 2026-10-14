@@ -12,6 +12,7 @@ import ResetPasswordPage  from "./ResetPasswordPage";
 import AboutUs  from "./AboutUs.jsx";
 import HelpCenter from "./HelpCenter.jsx";
 import LegalPage from "./legal/Legal.jsx";
+import MedplumCallbackPage from "./MedplumCallbackPage.jsx";
 
 export { 
     ClinicJoin,
@@ -27,5 +28,6 @@ export {
     ResetPasswordPage,
     AboutUs,
     HelpCenter,
-    LegalPage
+    LegalPage,
+    MedplumCallbackPage
 }

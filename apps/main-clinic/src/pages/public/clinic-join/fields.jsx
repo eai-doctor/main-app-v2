@@ -6,7 +6,7 @@ import { useAuth } from '@/context/AuthContext';
 import { Button, Input, Label } from "@/components/ui";
 
 function Fields() {
-  const { login } = useAuth();
+  const { handleMedplumLogin, login } = useAuth();
   const { t } = useTranslation(['landing', 'common', 'clinic', 'auth']);
 
   const [formData, setFormData] = useState({ email: "", password: "", name: "", role: "clinician" });
@@ -39,7 +39,32 @@ function Fields() {
         <p className="text-gray-600 text-sm">{t('clinic:home.welcome.signin')}</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <button
+        type="button"
+        onClick={handleMedplumLogin}
+        className="
+          w-full
+          flex items-center justify-center gap-3
+          bg-gradient-to-r from-[#7627A8] via-[#9638C5] to-[#B35BDF]
+          hover:from-[#64208F] hover:via-[#822BAD] hover:to-[#9B45C8]
+          text-white
+          py-4 px-8
+          rounded-xl
+          font-semibold text-base
+          shadow-md hover:shadow-lg
+          transition-all duration-300
+          hover:-translate-y-0.5
+          active:translate-y-0
+          focus-visible:outline-none
+          focus-visible:ring-2 focus-visible:ring-purple-400
+          focus-visible:ring-offset-2
+        "
+      >
+        <span>Login with Medplum</span>
+        <span aria-hidden="true">→</span>
+      </button>
+
+      {/* <form onSubmit={handleSubmit} className="space-y-5">
         <div className="space-y-2">
           <Label htmlFor="userId" className="text-gray-700">{t('common:labels.email')}</Label>
           <div className="relative">
@@ -99,7 +124,7 @@ function Fields() {
         >
           { submitting ? t('auth:signingIn') : t('auth:signIn')}
         </Button>
-      </form>
+      </form> */}
     </>
   );
 }

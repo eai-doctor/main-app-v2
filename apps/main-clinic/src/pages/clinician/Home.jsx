@@ -40,7 +40,6 @@ export default function Home() {
       color: "from-blue-400 to-blue-600",
       disabled: false
     },
-    ,
     {
       id: "medplum-ehr",
       title: "Medplum EHR",

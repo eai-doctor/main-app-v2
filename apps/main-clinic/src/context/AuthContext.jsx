@@ -12,8 +12,16 @@ import {
   authAdminLogin 
 } from "@/api/authApi";
 import { setStoredToken, getStoredToken, clearStoredToken } from "@/api/axiosBase";
+import medplum from "@/api/medplumApi";
 
 const AuthContext = createContext(null);
+
+async function handleMedplumLogin() {
+  await medplum.signInWithRedirect({
+    clientId: '3cde7dc8-aa68-4f35-8baa-359d43b28a6a',
+    redirectUri: 'http://dev.clinic.e-ai.ca/auth/callback',
+  });
+}
 
 export function useAuth() {
   const ctx = useContext(AuthContext);
@@ -29,24 +37,85 @@ export function AuthProvider({ children }) {
   const isAuthenticated = !!user;
   const isPatient = isAuthenticated && user.role == "patient";
 
+  //mediplum
+  const [medplumUser, setMedplumUser] = useState(null);
+  const [medplumLoading, setMedplumLoading] = useState(false);
+
   // console.log("storedToken:", getStoredToken());
   // console.log("accessToken:", accessToken);
+
+  // useEffect(() => {
+  //   let isMounted = true;
+
+  //   const initializeAuth = async () => {
+  //     try {
+  //       const refreshRes = await authRefresh({ withCredentials: true });
+  //       const newAccessToken = refreshRes.data.access_token;
+
+  //       if (isMounted) {
+  //         setStoredToken(newAccessToken);
+  //         setAccessToken(newAccessToken); 
+  //       }
+
+  //       const userRes = await authMe({
+  //         headers: { Authorization: `Bearer ${newAccessToken}` }
+  //       });
+
+  //       if (isMounted && userRes.data?.user) {
+  //         setUser(userRes.data.user);
+  //       }
+  //     } catch (err) {
+  //       if (isMounted) {
+  //         console.warn("Session recovery failed (No refresh token or expired)");
+  //         setUser(null);
+  //         setAccessToken(null);
+  //       }
+  //     } finally {
+  //       if (isMounted) setLoading(false);
+  //     }
+  //   };
+
+  //   initializeAuth();
+  //   return () => { isMounted = false; };
+  // }, []);
 
   useEffect(() => {
     let isMounted = true;
 
     const initializeAuth = async () => {
       try {
-        const refreshRes = await authRefresh({ withCredentials: true });
+        const medplumProfile = await medplum.getProfileAsync();
+
+        if (medplumProfile) {
+          if (isMounted) {
+            setMedplumUser(medplumProfile);
+
+            setUser({
+              id: medplumProfile.id,
+              email: 'doctor@aidoctor.com',
+              name: 'Saebyeok Chu',
+              role: "clinician",
+              authProvider: "medplum",
+            });
+          }
+          return;
+        }
+
+        const refreshRes = await authRefresh({
+          withCredentials: true,
+        });
+
         const newAccessToken = refreshRes.data.access_token;
 
         if (isMounted) {
           setStoredToken(newAccessToken);
-          setAccessToken(newAccessToken); 
+          setAccessToken(newAccessToken);
         }
 
         const userRes = await authMe({
-          headers: { Authorization: `Bearer ${newAccessToken}` }
+          headers: {
+            Authorization: `Bearer ${newAccessToken}`,
+          },
         });
 
         if (isMounted && userRes.data?.user) {
@@ -54,21 +123,28 @@ export function AuthProvider({ children }) {
         }
       } catch (err) {
         if (isMounted) {
-          console.warn("Session recovery failed (No refresh token or expired)");
+          console.warn("Session recovery failed:", err);
+
           setUser(null);
           setAccessToken(null);
         }
       } finally {
-        if (isMounted) setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+        }
       }
     };
 
     initializeAuth();
-    return () => { isMounted = false; };
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
-  // saebyeok - cookie reflected
+// saebyeok - cookie reflected
 const login = useCallback(async (email, password) => {
+
   try {
     const res = await authLogin({ email, password });
     const { user: userData, access_token: tokenData } = res.data;
@@ -131,17 +207,20 @@ const adminLogin = useCallback(async (email, password) => {
     const role = user?.role;
 
     try {
-      await authLogout();
+      if (user?.authProvider === "medplum") {
+        await medplum.signOut();
+      } else {
+        await authLogout();
+      }
     } catch (err) {
-      console.error("Logout notification failed", err);
+      console.error("Logout failed:", err);
     }
 
     setUser(null);
-    setAccessToken(null);   
-    setStoredToken(null);  
+    setMedplumUser(null);
+    setAccessToken(null);
     clearStoredToken();
 
-    
     window.location.replace(
       role === "clinician" ? "/clinic-join?mode=scrolling" : "/"
     );
@@ -204,6 +283,34 @@ const adminLogin = useCallback(async (email, password) => {
     return res.data;
   }, []);
 
+  //101426 medipulm
+  const completeMedplumLogin = useCallback(async (code) => {
+    setMedplumLoading(true);
+
+    try {
+      await medplum.processCode(code);
+
+      const profile = await medplum.getProfileAsync();
+
+      if (!profile) {
+        throw new Error("Medplum profile not found");
+      }
+
+      setMedplumUser(profile);
+
+      setUser({
+        id: profile.id,
+        email: profile.email,
+        name: profile.name,
+        role: "clinician", // 임시 UI 값. 실제 권한 검증 필요
+        authProvider: "medplum",
+      });
+
+      return profile;
+    } finally {
+      setMedplumLoading(false);
+    }
+  }, []);
   // Set up axios response interceptor for 401s
   useEffect(() => {
     const interceptor = axios.interceptors.response.use(
@@ -222,7 +329,7 @@ const adminLogin = useCallback(async (email, password) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, setUser, isAuthenticated, isPatient, loading, login, adminLogin, logout, register, verifyEmail, resendVerification, accessToken, changePassword, forgotPassword }}
+      value={{ handleMedplumLogin, completeMedplumLogin, medplumUser, medplumLoading, user, setUser, isAuthenticated, isPatient, loading, login, adminLogin, logout, register, verifyEmail, resendVerification, accessToken, changePassword, forgotPassword }}
     >
       {children}
     </AuthContext.Provider>

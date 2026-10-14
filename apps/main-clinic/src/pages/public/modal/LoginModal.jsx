@@ -18,7 +18,7 @@ export default function LoginModal({
   defaultRole = "patient",
   message,
 }) {
-  const { login, register, verifyEmail, resendVerification, forgotPassword, accessToken } = useAuth();
+  const { handleMedplumLogin, login, register, verifyEmail, resendVerification, forgotPassword, accessToken } = useAuth();
   const { pendingRoute, requiredStep, externalRedirect } = useAuthModal();
   const { t } = useTranslation(["auth", "patient"]);
   const navigate = useNavigate();
@@ -191,6 +191,7 @@ const isPasswordValid = Object.values(passwordRules).every(Boolean);
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+
       <div className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(15,23,42,0.15)] max-w-md w-full">
 
         {/* Header */}
