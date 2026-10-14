@@ -14,6 +14,8 @@ Then `npm install` and `npm run dev -w main-clinic`. Sign in with a Practitioner
 account belonging to the configured self-hosted Medplum project.
 
 The browser connects directly to `https://api.eai-medplum-staging.tech/`.
+The floating **Medplum UI** shortcut opens the self-hosted web app configured by
+`VITE_MEDPLUM_APP_URL` in a separate tab.
 The Medplum server must list the exact frontend origin in `MEDPLUM_ALLOWED_ORIGINS`.
 For local development that is `http://localhost:5170`; add the eventual production
 frontend origin before deploying. Never use `*` and never put a ClientApplication
